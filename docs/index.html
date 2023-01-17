@@ -30,8 +30,8 @@
     }
     h1{
         font-weight: 700;
-        font-size: 4rem;
-        line-height: 3rem;
+        font-size: 48px;
+        line-height: 48px;
         text-align: right;
         color: #FFFFFF;
         text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25);
@@ -41,8 +41,8 @@
     h2{
         font-style: normal;
         font-weight: 600;
-        font-size: 3.5rem;
-        line-height: 4rem;
+        font-size: 36px;
+        line-height: 36px;
         color: #FFFFFF;
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         margin: 0;
@@ -50,14 +50,16 @@
     }
     h3{
         font-weight: 900;
-        font-size: 1.8rem;
+        font-size: 28px;
+        line-height: 35px;
         text-align: center;
         color: #9D2E7F;
             padding: 5% 0 0;
     }
     h4{
         font-weight: 800;
-        font-size: 1.3rem;
+        font-size: 20px;
+        line-height: 30px;
         text-align: center;
         color: #9D2E7F;
         width: 40%;
@@ -68,15 +70,15 @@
         font-family: 'Montserrat';
         font-style: normal;
         font-weight: 600;
-        font-size: 48px;
-        line-height: 48px;
+        font-size: 26px;
+        line-height: 30px;
         color: #714A88;
             padding: 5% 0 0;
     }
     p{
         font-weight: 600;
-        font-size: 1rem;
-        line-height: 30px;
+        font-size: 16px;
+        line-height: 25px;
         text-align: center;
         color: rgba(0, 0, 0, 0.61);
         width: 50%;
@@ -84,10 +86,10 @@
             padding: 5% 0 0;
     }
     .sectionprin{
-        background-image: url('./img/bgprin.svg');height: 90vh;display: flex;justify-content: space-between;align-items: flex-start;padding: 3% 5%;background-repeat: no-repeat;
+        background-image: url('./img/bgprin.svg');height: 80vh;display: flex;justify-content: space-between;align-items: flex-start;padding: 3% 5%;background-repeat: no-repeat;
     background-size: cover;
     }
-    .sectext{height: 80vh; justify-content: flex-end; display: flex; align-items: flex-end; flex-direction: column;}
+    .sectext{height: 65vh; justify-content: flex-end; display: flex; align-items: flex-end; flex-direction: column;}
     select {
     appearance: none;
     outline: 0;
@@ -204,16 +206,16 @@
     display: flex !important;
     flex-direction: column;
     align-items: center;
-    margin: 0 2.5px 2%;
+    margin: 1% 2.5px 2%;
 }
 .slick-slide img {
     display: block;
-    margin: 61px 0;
+    margin: 91px 0;
 }
     .slideyear{
         margin-top: 0;
         font-weight: 700;
-        font-size: 36px;
+        font-size: 26px;
         letter-spacing: -0.015em;
         color: #714A88;
         margin-bottom: 30px;
@@ -221,7 +223,7 @@
         
     }
     .slidetext{
-            height: 200px;
+        height: 260px;
         font-weight: 400;
         font-size: 16px;
         line-height: 21px;
@@ -230,6 +232,7 @@
         color: #000000;
         width: 100%;
         margin: 0;
+            word-break: break-word;
     }
     .stylebottom {
     background: #714A88;
@@ -275,6 +278,7 @@
     border-top: 2px solid #9D2E7F;
     border-left: 2px solid #9D2E7F;
     top: 25%;
+    z-index: 99;
     }
     .slick-next{
     transform: rotate(135deg);
@@ -328,8 +332,8 @@
     }
     .duvidatitle{
         font-weight: 500;
-        font-size: 20px;
-        line-height: 30px;
+        font-size: 16px;
+        line-height: 25px;
         color: #0F0E0F;
         display: flex;
         justify-content: space-between;
@@ -340,8 +344,8 @@
     }
     .duvidatext{
         font-weight: 400;
-        font-size: 18px;
-        line-height: 30px;
+        font-size: 16px;
+        line-height: 25px;
         color: #39353D;
         display: none;
         margin-top: 20px;
@@ -355,7 +359,10 @@
     .fa.active{
         display: none;
     }
-     @media screen and (min-width: 1441px) {
+    .slideinfos.bottom{
+        display: none !important;
+    }
+     /*@media screen and (min-width: 1441px) {
     h1{
         font-size: 5rem;
         line-height: 4rem;
@@ -382,37 +389,45 @@
         font-size: 1.5rem;
          line-height: 1.6rem;
     }
+    }*/
+    .nossahistoriamobile{
+        display: none;
+    }
+    .nossahistoria{
+        display: block;
     }
     @media screen and (max-width: 768px) {
         .menu_mobile-bottom {
     height: 52px!important;
     margin-top: -16px !important;
 }
-        h1{
-            font-size: 1.9rem;
-            line-height: 1.9rem;
-        }  
-        h2{
-            font-size: 1.7rem;
-            line-height: 1.7rem;
-        } 
-        h3{
-            font-size: 1.2rem;
-        }
-        h4{
+.nossahistoriamobile{
+        display: block;
+    }
+    .nossahistoria{
+        display: none;
+    }
+         h3{
+        font-size: 19px;
+        line-height: 30px;
+    }
+    h4{
+        font-size: 18px;
+        margin: 0;
             width: 100%;
-            margin: 0;
-        }
-        h5{
-            font-size: 1.5rem;
-        }
-        .duvidatitle, .duvidatext{
-            font-size: 1rem;
-        }
-        p{
+    }
+        p, .sectionset div p{
             width: 90% !important;
             margin: 0%5%!important;
             padding: 2% ;
+            font-size: 16px;
+        }
+        .textcomo{
+            font-size: 16px;
+        }
+        .sectionset div p{
+            width: 100% !important;
+            margin: 0!important;
         }
         .slick-next, .slick-prev{
             top: 20%;
@@ -456,7 +471,7 @@
             width: 95% !important;
         }
         .infos h5 {
-            margin: 0;
+            margin: 5% 0 0;
             padding: 0 20px 0 0px;
         }
         .sectionqua {
@@ -475,14 +490,11 @@
 .divstore img {
     width: 40px;
 }
-.imgcomo img {
-    width: 50px;
+.imgcomo  {
+    display: none;
 }
-.infos {
-    margin-top: -17%;
-    margin-left: 55px;
-}
-        .textcomo,.comofunciona{
+
+ .textcomo,.comofunciona{
     margin: 5% 0 !important;
     padding: 0 2%!important;
     width: 100%!important;
@@ -495,7 +507,22 @@
 }
     .slidetext{
             height: auto;}
+             .slideinfos.bottom{
+        display: block!important;
     }
+     .stylebottom.rosa{
+        background-color: #9D2E7F !important;
+     }
+      .stylebottom.rosa::before{ border-bottom-color: #9D2E7F !important;}
+    .slideinfos.top{
+        display: none !important;
+    }
+    img.slideimg {
+    margin: auto;
+}
+
+    }
+   
 </style>
 <body>
     <nav class="top_bar d-md-block d-none">
@@ -795,20 +822,21 @@
         <section class="sectionsex">
             <h3 style="margin-bottom: 2%;">Nossa história até aqui:</h3>
             <div class="nossahistoria">
-                <div class="slideinfos" >
+                <div class="slideinfos" id="start" >
                     <img class="slideimg" src="./img/nossahistoria/slide2009.svg" />
                     <div class="stylebottom"></div>
                     <h6 class="slideyear">2009</h6>
                     <p class="slidetext">O Clube é fundado pelos sócios Indio Brasileiro Guerra Neto, Ricardo Almeida e Anderson de
                         Andrade.</p>
                 </div>
-                <div class="slideinfos" >
+                <div class="slideinfos top" >
                     <h6 class="slideyear">2012</h6>
                     <p class="slidetext">Lançamento do www.profissionaisdolivro.com.br, primeiro marketplace de venda de serviços editoriais da América Latina.</p>
                     <div class="styletop"></div>
                     <img class="slideimg" src="./img/nossahistoria/slide2012.svg" />
 
                 </div>
+               
                 <div class="slideinfos" >
                     <img class="slideimg" src="./img/nossahistoria/slide2013.svg" />
                     <div class="stylebottom"></div>
@@ -816,25 +844,27 @@
                     <p class="slidetext">Primeira plataforma de autopublicação a receber um aporte. O investimento foi feito pelo Fundo SC, gerido pela empresa
                     FirCapital BZPlan, e focado no investimento em empresas inovadoras.</p>
                 </div>
-                <div class="slideinfos" >
+                <div class="slideinfos top" >
                     <h6 class="slideyear">2014</h6>
                     <p class="slidetext">Vencemos o Prêmio de Empreendimento mais Inovador do Mundo pela Feira do Livro de Londres.</p>
                     <div class="styletop"></div>
                     <img class="slideimg" src="./img/nossahistoria/slide2014.svg" />
                 </div>
+                
                 <div class="slideinfos" >
                     <img class="slideimg" src="./img/nossahistoria/slide2015.svg" />
                     <div class="stylebottom"></div>
                     <h6 class="slideyear">2015</h6>
                     <p class="slidetext">Livros do Clube de Autores são oficialmente selecionados para o acervo da Biblioteca do Congresso Americano.</p>
                 </div>
-                <div class="slideinfos" >
+                <div class="slideinfos top" >
                     <h6 class="slideyear">2016</h6>
                     <p class="slidetext">Acordo com SESI e diversas universidades brasileiras para publicação e distribuição de livros no meio acadêmico.</p>
                     <div class="styletop"></div>
                     <img class="slideimg" src="./img/nossahistoria/slide2016.svg" />
                 
                 </div>
+                
                 <div class="slideinfos" >
                     <img class="slideimg" src="./img/nossahistoria/slide2018.svg" />
                     <div class="stylebottom"></div>
@@ -842,7 +872,7 @@
                     <p class="slidetext">Acordo pioneiro de distribuição para livros autopublicados feito com a Estante Virtual, garantindo mais visibilidade
                     para todos os autores.</p>
                 </div>
-                <div class="slideinfos">
+                <div class="slideinfos top">
                     <h6 class="slideyear">2019</h6>
                     <p class="slidetext">Acordos de distribuição com Amazon, Livraria Cultura, Mercado Livre, Submarino e Americanas, transformando o Clube de
                     Autores na plataforma de autopublicação com mais distribuição em todo o mundo.</p>
@@ -850,13 +880,14 @@
                     <img class="slideimg" src="./img/nossahistoria/slide2019.svg" />
                 
                 </div>
+                
                 <div class="slideinfos" >
                     <img class="slideimg" src="./img/nossahistoria/slide2020.svg" />
                     <div class="stylebottom"></div>
                     <h6 class="slideyear">2020</h6>
                     <p class="slidetext">Acordo internacional viabilizando a venda e distribuição de livros do Clube de Autores em todo o mundo!</p>
                 </div>
-                <div class="slideinfos">
+                <div class="slideinfos top">
                     <h6 class="slideyear">2021</h6>
                     <p class="slidetext">Lançamento do novo studio de design de capas integrado ao sistema de publicação; lançamento do novo Profissionais do
                     Livro, prestando serviços editoriais completos para o autor; implantação de sistema de Compliance Editorial.</p>
@@ -864,13 +895,111 @@
                     <img class="slideimg" src="./img/nossahistoria/slide2021.svg" />
                 
                 </div>
-                <div class="slideinfos" >
+                
+                <div class="slideinfos" id="end">
                     <img class="slideimg" src="./img/nossahistoria/slide2022.svg" />
                     <div class="stylebottom"></div>
                     <h6 class="slideyear">2022</h6>
                     <p class="slidetext">Integração com sistema de ISBN da Câmara Brasileira do Livro, permitindo que livros já sejam publicados com o código;
                     integração com novos modelos e lojas, ampliando a estrutura de distribuição; início do processo de internacionalização
                     permitindo vendas por todo o mundo!</p>
+                </div>
+            </div>
+            <div class="nossahistoriamobile" >
+                <div class="slideinfos" id="start">
+                    <img class="slideimg" src="./img/nossahistoria/slide2009.svg" />
+                    <div class="stylebottom"></div>
+                    <h6 class="slideyear">2009</h6>
+                    <p class="slidetext">O Clube é fundado pelos sócios Indio Brasileiro Guerra Neto, Ricardo Almeida e Anderson de
+                        Andrade.</p>
+                </div>
+                <div class="slideinfos bottom">
+                    <img class="slideimg" src="./img/nossahistoria/slide2012.svg" />
+                    <div class="stylebottom rosa"></div>
+                    <h6 class="slideyear">2012</h6>
+                    <p class="slidetext">Lançamento do www.profissionaisdolivro.com.br, primeiro marketplace de venda de serviços
+                        editoriais da América Latina.</p>
+            
+                </div>
+                <div class="slideinfos">
+                    <img class="slideimg" src="./img/nossahistoria/slide2013.svg" />
+                    <div class="stylebottom"></div>
+                    <h6 class="slideyear">2013</h6>
+                    <p class="slidetext">Primeira plataforma de autopublicação a receber um aporte. O investimento foi feito pelo
+                        Fundo SC, gerido pela empresa
+                        FirCapital BZPlan, e focado no investimento em empresas inovadoras.</p>
+                </div>
+                <div class="slideinfos bottom">
+            
+                    <img class="slideimg" src="./img/nossahistoria/slide2014.svg" />
+                    <div class="stylebottom rosa"></div>
+                    <h6 class="slideyear">2014</h6>
+                    <p class="slidetext">Vencemos o Prêmio de Empreendimento mais Inovador do Mundo pela Feira do Livro de Londres.
+                    </p>
+            
+                </div>
+                <div class="slideinfos">
+                    <img class="slideimg" src="./img/nossahistoria/slide2015.svg" />
+                    <div class="stylebottom"></div>
+                    <h6 class="slideyear">2015</h6>
+                    <p class="slidetext">Livros do Clube de Autores são oficialmente selecionados para o acervo da Biblioteca do
+                        Congresso Americano.</p>
+                </div>
+                <div class="slideinfos bottom">
+            
+                    <img class="slideimg" src="./img/nossahistoria/slide2016.svg" />
+                    <div class="stylebottom rosa"></div>
+                    <h6 class="slideyear">2016</h6>
+                    <p class="slidetext">Acordo com SESI e diversas universidades brasileiras para publicação e distribuição de
+                        livros no meio acadêmico.</p>
+            
+            
+                </div>
+                <div class="slideinfos">
+                    <img class="slideimg" src="./img/nossahistoria/slide2018.svg" />
+                    <div class="stylebottom"></div>
+                    <h6 class="slideyear">2018</h6>
+                    <p class="slidetext">Acordo pioneiro de distribuição para livros autopublicados feito com a Estante Virtual,
+                        garantindo mais visibilidade
+                        para todos os autores.</p>
+                </div>
+                <div class="slideinfos bottom">
+                    <img class="slideimg" src="./img/nossahistoria/slide2019.svg" />
+                    <div class="stylebottom rosa"></div>
+                    <h6 class="slideyear">2019</h6>
+                    <p class="slidetext">Acordos de distribuição com Amazon, Livraria Cultura, Mercado Livre, Submarino e
+                        Americanas, transformando o Clube de
+                        Autores na plataforma de autopublicação com mais distribuição em todo o mundo.</p>
+            
+            
+                </div>
+                <div class="slideinfos">
+                    <img class="slideimg" src="./img/nossahistoria/slide2020.svg" />
+                    <div class="stylebottom"></div>
+                    <h6 class="slideyear">2020</h6>
+                    <p class="slidetext">Acordo internacional viabilizando a venda e distribuição de livros do Clube de Autores em
+                        todo o mundo!</p>
+                </div>
+                <div class="slideinfos bottom">
+                    <img class="slideimg" src="./img/nossahistoria/slide2021.svg" />
+                    <div class="stylebottom rosa"></div>
+                    <h6 class="slideyear">2021</h6>
+                    <p class="slidetext">Lançamento do novo studio de design de capas integrado ao sistema de publicação; lançamento
+                        do novo Profissionais do
+                        Livro, prestando serviços editoriais completos para o autor; implantação de sistema de Compliance Editorial.
+                    </p>
+            
+            
+                </div>
+                <div class="slideinfos" id="end">
+                    <img class="slideimg" src="./img/nossahistoria/slide2022.svg" />
+                    <div class="stylebottom"></div>
+                    <h6 class="slideyear">2022</h6>
+                    <p class="slidetext">Integração com sistema de ISBN da Câmara Brasileira do Livro, permitindo que livros já
+                        sejam publicados com o código;
+                        integração com novos modelos e lojas, ampliando a estrutura de distribuição; início do processo de
+                        internacionalização
+                        permitindo vendas por todo o mundo!</p>
                 </div>
             </div>
         </section>
@@ -1154,9 +1283,17 @@
                 document.getElementById(`text${id}`).classList.add("active")
             }
         }
+        $('.nossahistoriamobile').slick({
+                dots: false,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                
+            });
         $('.nossahistoria').slick({
                 dots: false,
-                infinite: true,
+                infinite: false,
                 speed: 500,
                 slidesToShow: 5,
                 slidesToScroll: 1,
@@ -1184,6 +1321,25 @@
                 }
 
             ]
+        });
+        document.addEventListener("DOMContentLoaded", function (event) {
+            let id=0
+            if(window.innerWidth<764){
+                id=1
+            }
+            document.querySelectorAll(".slick-prev")[id].style.display = "none"
+            document.querySelectorAll(".slick-prev")[id].addEventListener("click", function () {
+                document.querySelectorAll(".slick-next")[id].style.display = ""
+                if (document.querySelectorAll("#start")[id].classList.contains("slick-active")) {
+                    document.querySelectorAll(".slick-prev")[id].style.display = "none"
+                }
+            })
+            document.querySelectorAll(".slick-next")[id].addEventListener("click", function () {
+                document.querySelectorAll(".slick-prev")[id].style.display = ""
+                if (document.querySelectorAll("#end")[id].classList.contains("slick-active")) {
+                    document.querySelectorAll(".slick-next")[id].style.display = "none"
+                }
+            })
         });
     </script>
 </body>
