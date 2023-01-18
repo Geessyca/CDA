@@ -1515,8 +1515,8 @@
                     .data(markers)
                     .enter()
                     .append("image")
-                    .attr('width', 30)
-                    .attr('height', 30)
+                    .attr('width', window.innerWidth <600?35:45)
+                    .attr('height', window.innerWidth < 600 ? 35 : 45)
                     .attr('id', (d) => {
                         return d.name
                     })
@@ -1524,7 +1524,7 @@
                     .attr("xlink:href", './img/principaisparceiros/ppurple.png')
                     .attr("transform", (d) => {
                         let p = projection([d.long, d.lat]);
-                        return `translate(${p[0] - 10}, ${p[1] - 10})`;
+                        return `translate(${p[0] - 20}, ${p[1] - 20})`;
                     }).on('mouseover', function (d) {
                         d3.select(this).style('fill', 'black');
                         d3.select('#name').text(d.name).attr("style", `color:${d.name == "Canadá" ? "#F59822" : "#9D2E7F"}`)
