@@ -142,7 +142,7 @@
     }
     .sectionterc, .sectionqui{
         background: rgba(217, 217, 217, 0.1);
-        padding: 2% 0;
+        padding: 0 0 2%;
         margin: 6% 0 0;
     }
     .sectionqui{
@@ -162,7 +162,8 @@
         margin: 3% 10% 0;
     }
     .divstore img {
-        width: 60px;
+       
+    object-fit: contain;
         margin: 5px;
     }
     .sectionqua{
@@ -283,6 +284,14 @@
     top: 25%;
     z-index: 99;
     }
+    #parceiros .slick-next,#parceiros .slick-prev{
+        top: -2px !important;
+    }
+    #parceiros .slick-next{
+        right: 2% !important;
+    } #parceiros .slick-prev{
+            left: 2% !important;
+        }
     .slick-next{
     transform: rotate(135deg);
         right: 8%;
@@ -364,6 +373,9 @@
     }
     .slideinfos.bottom{
         display: none !important;
+    }
+    #parceiros .slick-track {
+        height: 40px;
     }
      /*@media screen and (min-width: 1441px) {
     h1{
@@ -452,6 +464,9 @@
         .slick-next, .slick-prev{
             top: 20%;
         }
+        #parceiros .slick-next, #parceiros .slick-prev{
+            top: -22% !important;
+        }
         .sectionprin{
             padding: 0 3%;
             flex-direction: column;
@@ -508,6 +523,7 @@
     height: 35vh;
 }
 .divstore img {
+    
     width: 40px;
 }
 .imgcomo  {
@@ -817,13 +833,27 @@
                     <span id="mercadolivre" class="info"><img
                             src="./img/principaisparceiros/mercadolivre.svg" />mercadolivre</span><br>
                     <span id="submarino" class="info"><img src="./img/principaisparceiros/submarino.svg" />submarino</span><br>
+                    <span id="scribd" class="info"><img src="./img/principaisparceiros/scribd.png" />scribd</span><br>
+                    <span id="skeelo" class="info"><img src="./img/principaisparceiros/skeelo.png" />skeelo</span><br>
+                    <span id="bookmate" class="info"><img src="./img/principaisparceiros/bookmate.png" />bookmate</span><br>
+                    <span id="barnesnoble" class="info"><img src="./img/principaisparceiros/barnesnoble.png" />barnes & Noble</span><br>
+                    <span id="overdrive" class="info"><img src="./img/principaisparceiros/overdrive.png" />overDrive</span><br>
+                    <span id="estantevirtual" class="info"><img src="./img/principaisparceiros/estantevirtual.jfif" />estante Virtual</span><br>
+                    <span id="appstore" class="info"><img src="./img/principaisparceiros/appstore.png" />appStore</span><br>
                 </div>
             </div>
-            <div class="divstore">
-                <img src="./img/principaisparceiros/americanas.svg"/>
-                <img src="./img/principaisparceiros/amazon.svg" />
-                <img src="./img/principaisparceiros/mercadolivre.svg" />
-                <img src="./img/principaisparceiros/submarino.svg" />
+            <div class="divstore" id="parceiros">
+                <img src="./img/principaisparceiros/americanas.svg"  />
+                <img src="./img/principaisparceiros/amazon.svg"  />
+                <img src="./img/principaisparceiros/mercadolivre.svg"  />
+                <img src="./img/principaisparceiros/submarino.svg"  />
+                <img src="./img/principaisparceiros/scribd.png"  />
+                <img src="./img/principaisparceiros/skeelo.png"  />
+                <img src="./img/principaisparceiros/bookmate.png"  />
+                <img src="./img/principaisparceiros/barnesnoble.png"  />
+                <img src="./img/principaisparceiros/overdrive.png"  />
+                <img src="./img/principaisparceiros/estantevirtual.jfif"  />
+                <img src="./img/principaisparceiros/appstore.png"  />
             </div>
         </section>
         <section class="sectionqua">
@@ -1399,10 +1429,28 @@
 
             ]
         });
+        $('#parceiros').slick({
+                dots: false,
+                infinite: true,
+                speed: 500,
+            centerPadding: '60px',
+                slidesToShow: 7,
+                slidesToScroll: 2,
+                responsive: [
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1
+                        }
+                    }
+
+                ]
+            });
         document.addEventListener("DOMContentLoaded", function (event) {
             let id=0
             if(window.innerWidth<764){
-                id=1
+                id=2
             }
             document.querySelectorAll(".slick-prev")[id].style.display = "none"
             document.querySelectorAll(".slick-prev")[id].addEventListener("click", function () {
@@ -1417,6 +1465,7 @@
                     document.querySelectorAll(".slick-next")[id].style.display = "none"
                 }
             })
+
         });
     </script>
     <script>
@@ -1428,7 +1477,14 @@
                     americanas: true,
                     amazon: true,
                     mercadolivre: true,
-                    submarino: true
+                    submarino: true,
+                    scribd:false,
+                    skeelo:false,
+                    bookmate:false,
+                    barnesnoble:false,
+                    overdrive:false,
+                    estantevirtual:false,
+                    appstore:false
                 }, // Brasil
             ];
 
@@ -1440,7 +1496,14 @@
                     americanas: true,
                     amazon: true,
                     mercadolivre: true,
-                    submarino: false
+                    submarino: false,
+                    scribd: false,
+                    skeelo: false,
+                    bookmate: false,
+                    barnesnoble: false,
+                    overdrive: false,
+                    estantevirtual: false,
+                    appstore: false
                 }, // Portugual
             ];
             var vendas = [{
@@ -1450,7 +1513,14 @@
                 americanas: true,
                 amazon: true,
                 mercadolivre: false,
-                submarino: false
+                submarino: false,
+                scribd: false,
+                skeelo: false,
+                bookmate: false,
+                barnesnoble: false,
+                overdrive: false,
+                estantevirtual: false,
+                appstore: false
             }, // Canadá
             {
                 name: "Brasil",
@@ -1459,7 +1529,14 @@
                 americanas: true,
                 amazon: true,
                 mercadolivre: true,
-                submarino: true
+                submarino: true,
+                scribd: false,
+                skeelo: false,
+                bookmate: false,
+                barnesnoble: false,
+                overdrive: false,
+                estantevirtual: false,
+                appstore: false
             }, // Brasil
             {
                 name: "Portugual",
@@ -1468,7 +1545,14 @@
                 americanas: true,
                 amazon: true,
                 mercadolivre: true,
-                submarino: false
+                submarino: false,
+                scribd: false,
+                skeelo: false,
+                bookmate: false,
+                barnesnoble: false,
+                overdrive: false,
+                estantevirtual: false,
+                appstore: false
             }, // Portugual
             ];
 
@@ -1532,6 +1616,13 @@
                         d3.select('#amazon').attr("style", `display:${d.amazon ? "flex" : "none"}`)
                         d3.select('#mercadolivre').attr("style", `display:${d.mercadolivre ? "flex" : "none"}`)
                         d3.select('#submarino').attr("style", `display:${d.submarino ? "flex" : "none"}`)
+                        d3.select('#scribd').attr("style", `display:${d.scribd ? "flex" : "none"}`)
+                        d3.select('#skeelo').attr("style", `display:${d.skeelo ? "flex" : "none"}`)
+                        d3.select('#bookmate').attr("style", `display:${d.bookmate ? "flex" : "none"}`)
+                        d3.select('#barnesnoble').attr("style", `display:${d.barnesnoble ? "flex" : "none"}`)
+                        d3.select('#overdrive').attr("style", `display:${d.overdrive ? "flex" : "none"}`)
+                        d3.select('#estantevirtual').attr("style", `display:${d.estantevirtual ? "flex" : "none"}`)
+                        d3.select('#appstore').attr("style", `display:${d.appstore ? "flex" : "none"}`)
                         d3.select('#tooltip')
                             .style('left', (d3.event.pageX + 10) + 'px')
                             .style('top', (d3.event.pageY - 80) + 'px')
