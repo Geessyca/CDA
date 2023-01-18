@@ -1521,7 +1521,7 @@
                         return d.name
                     })
                     .attr('class', 'markerpoint')
-                    .attr("xlink:href", './img/principaisparceiros/ppurple.png')
+                    .attr("xlink:href", './img/principaisparceiros/ppurple.svg')
                     .attr("transform", (d) => {
                         let p = projection([d.long, d.lat]);
                         return `translate(${p[0] - 20}, ${p[1] - 20})`;
@@ -1542,7 +1542,7 @@
                             .style('display', 'none');
                     });
 
-                document.querySelectorAll(".markerpoint")[0].attributes.href.value = './img/principaisparceiros/pyellow.png'
+                document.querySelectorAll(".markerpoint")[0].attributes.href.value = './img/principaisparceiros/pyellow.svg'
             })
             document.getElementById("tooltip").addEventListener("click", function () {
                 document.getElementById("tooltip").style.display = "none"
