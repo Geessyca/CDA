@@ -405,6 +405,12 @@
 #mapamobile{
         display: none;
     }
+    @media screen and (max-width: 599px) {   #mapadesktop{
+        display: none;
+    }
+#mapamobile{
+        display: block;
+    }}
     @media screen and (max-width: 768px) {
         .menu_mobile-bottom {
     height: 52px!important;
@@ -413,12 +419,7 @@
 .sectionprin{
     background-image: url("./img/bgmobile.png");
 }
-   #mapadesktop{
-        display: none;
-    }
-#mapamobile{
-        display: block;
-    }
+
 .sectionprin div{ display: none;}
 .nossahistoriamobile{
         display: block;
@@ -769,7 +770,7 @@
         </div>
         <div class="menu_mobile-bottom">
             <form action="/books/search" method="GET">
-                <select name="where">
+                <select name="where" >
                     <option value="books">Livros</option>
                     <option value="authors">Autores</option>
                 </select>
@@ -799,16 +800,16 @@
         <section class="sectionterc">
             <div class="divselect">
                 <div class="select">
-                    <select>
-                        <option value="1">Vendas</option>
-                        <option value="2">Impressos</option>
-                        <option value="3">Ebooks</option>
+                    <select id="optionsMap" onchange="selectchange()">
+                        <option value="vendas">Vendas</option>
+                        <option value="impressos">Impressos</option>
+                        <option value="ebooks">Ebooks</option>
                     </select>
                 </div>
             </div>
             <div class="mapa" style="margin-top: 2%;">
-                <svg id="mapadesktop" width="100%" height="85vh"></svg>
-                <svg id="mapamobile" width="100%" height="40vh"></svg>
+                <svg id="mapadesktop" width="100%" height="110vh"></svg>
+                <svg id="mapamobile" width="100%" height="33vh"></svg>
                 <div id="tooltip">
                     <span id="name" class="info"></span><br>
                     <span id="americanas" class="info"><img src="./img/principaisparceiros/americanas.svg" />americanas</span><br>
@@ -1419,108 +1420,152 @@
         });
     </script>
     <script>
-        var width,heigh,svg,projection
-        if (window.innerWidth < 768) {
-            width = window.innerWidth,
-                height = window.innerHeight / 5;
-            svg = d3.select("#mapamobile"),
-                width = width,
-                height = height;
-            projection = d3.geoMercator()
-                .scale((width + 1) / 1.8 / Math.PI)
-                .translate([(width / 2), height / 1])
-                .precision(.1);
+        var ebooks = [
+                {
+                    name: "Brasil",
+                    long: -50,
+                    lat: -13,
+                    americanas: true,
+                    amazon: true,
+                    mercadolivre: true,
+                    submarino: true
+                }, // Brasil
+            ];
+
+            var impressos = [
+                {
+                    name: "Portugual",
+                    long: -9.5,
+                    lat: 43,
+                    americanas: true,
+                    amazon: true,
+                    mercadolivre: true,
+                    submarino: false
+                }, // Portugual
+            ];
+            var vendas = [{
+                name: "Canadá",
+                long: -112,
+                lat: 60,
+                americanas: true,
+                amazon: true,
+                mercadolivre: false,
+                submarino: false
+            }, // Canadá
+            {
+                name: "Brasil",
+                long: -50,
+                lat: -13,
+                americanas: true,
+                amazon: true,
+                mercadolivre: true,
+                submarino: true
+            }, // Brasil
+            {
+                name: "Portugual",
+                long: -9.5,
+                lat: 43,
+                americanas: true,
+                amazon: true,
+                mercadolivre: true,
+                submarino: false
+            }, // Portugual
+            ];
+
+            var markers = vendas
+        function mapa(){
+            var width, heigh, svg, projection
+            if (window.innerWidth < 600) {
+                width = window.innerWidth,
+                    height = window.innerHeight / 5;
+                svg = d3.select("#mapamobile"),
+                    width = width,
+                    height = height;
+                projection = d3.geoMercator()
+                    .scale((width + 1) / 1.8 / Math.PI)
+                    .translate([(width / 2), height / 1])
+                    .precision(.1);
+            }
+            else {
+                width = window.innerWidth,
+                    height = window.innerHeight;
+                svg = d3.select("#mapadesktop"),
+                    width = width,
+                    height = height;
+                projection = d3.geoMercator()
+                    .scale((width + 1) / 2 / Math.PI)
+                    .translate([(width / 2), height / 1.5])
+                    .precision(.1);
+            }
+            var path = d3.geoPath()
+                .projection(projection)
+
+            
+            d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson", function (data) {
+                svg.append("g")
+                    .selectAll("path")
+                    .data(data.features)
+                    .enter().append("path")
+                    .attr("fill", "#cbc7c7")
+                    .attr("d", d3.geoPath()
+                        .projection(projection)
+                    )
+                    .style("stroke", "#cbc7c7")
+                svg.selectAll(".m")
+                    .data(markers)
+                    .enter()
+                    .append("image")
+                    .attr('width', 30)
+                    .attr('height', 30)
+                    .attr('id', (d) => {
+                        return d.name
+                    })
+                    .attr('class', 'markerpoint')
+                    .attr("xlink:href", './img/principaisparceiros/ppurple.png')
+                    .attr("transform", (d) => {
+                        let p = projection([d.long, d.lat]);
+                        return `translate(${p[0] - 10}, ${p[1] - 10})`;
+                    }).on('mouseover', function (d) {
+                        d3.select(this).style('fill', 'black');
+                        d3.select('#name').text(d.name).attr("style", `color:${d.name == "Canadá" ? "#F59822" : "#9D2E7F"}`)
+                        d3.select('#americanas').attr("style", `display:${d.americanas ? "flex" : "none"}`)
+                        d3.select('#amazon').attr("style", `display:${d.amazon ? "flex" : "none"}`)
+                        d3.select('#mercadolivre').attr("style", `display:${d.mercadolivre ? "flex" : "none"}`)
+                        d3.select('#submarino').attr("style", `display:${d.submarino ? "flex" : "none"}`)
+                        d3.select('#tooltip')
+                            .style('left', (d3.event.pageX + 10) + 'px')
+                            .style('top', (d3.event.pageY - 80) + 'px')
+                            .style('display', 'block')
+                    })
+                    .on('mouseout', function (d) {
+                        d3.select('#tooltip')
+                            .style('display', 'none');
+                    });
+
+                document.querySelectorAll(".markerpoint")[0].attributes.href.value = './img/principaisparceiros/pyellow.png'
+            })
+            document.getElementById("tooltip").addEventListener("click", function () {
+                document.getElementById("tooltip").style.display = "none"
+            })
+
         }
-        else{
-             width = window.innerWidth,
-                height = window.innerHeight;
-             svg = d3.select("#mapadesktop"),
-                width = width,
-                height = height;
-             projection = d3.geoMercator()
-                .scale((width + 1) / 2.3 / Math.PI)
-                .translate([(width / 2), height / 2])
-                .precision(.1);
-        }
-        var path = d3.geoPath()
-            .projection(projection)
-
-
-        var markers = [{
-            name: "Canadá",
-            long: -112,
-            lat: 60,
-            americanas: true,
-            amazon: true,
-            mercadolivre: false,
-            submarino: false
-        }, // Canadá
-        {
-            name: "Brasil",
-            long: -50,
-            lat: -13,
-            americanas: true,
-            amazon: true,
-            mercadolivre: true,
-            submarino: true
-        }, // Brasil
-        {
-            name: "Portugual",
-            long: -9.5,
-            lat: 43,
-            americanas: true,
-            amazon: true,
-            mercadolivre: true,
-            submarino: false
-        }, // Portugual
-        ];
-        d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson", function (data) {
-            svg.append("g")
-                .selectAll("path")
-                .data(data.features)
-                .enter().append("path")
-                .attr("fill", "#857E7E")
-                .attr("d", d3.geoPath()
-                    .projection(projection)
-                )
-                .style("stroke", "#000")
-            svg.selectAll(".m")
-                .data(markers)
-                .enter()
-                .append("image")
-                .attr('width', 30)
-                .attr('height', 30)
-                .attr('id', (d) => {
-                    return d.name
-                })
-                .attr('class', 'markerpoint')
-                .attr("xlink:href", './img/principaisparceiros/ppurple.png')
-                .attr("transform", (d) => {
-                    let p = projection([d.long, d.lat]);
-                    return `translate(${p[0] - 10}, ${p[1] - 10})`;
-                }).on('mouseover', function (d) {
-                    d3.select(this).style('fill', 'black');
-                    d3.select('#name').text(d.name).attr("style", `color:${d.name == "Canadá" ? "#F59822" : "#9D2E7F"}`)
-                    d3.select('#americanas').attr("style", `display:${d.americanas ? "flex" : "none"}`)
-                    d3.select('#amazon').attr("style", `display:${d.amazon ? "flex" : "none"}`)
-                    d3.select('#mercadolivre').attr("style", `display:${d.mercadolivre ? "flex" : "none"}`)
-                    d3.select('#submarino').attr("style", `display:${d.submarino ? "flex" : "none"}`)
-                    d3.select('#tooltip')
-                        .style('left', (d3.event.pageX + 10) + 'px')
-                        .style('top', (d3.event.pageY - 80) + 'px')
-                        .style('display', 'block')
-                })
-                .on('mouseout', function (d) {
-                    d3.select('#tooltip')
-                        .style('display', 'none');
-                });
-
-            document.querySelectorAll(".markerpoint")[0].attributes.href.value = './img/principaisparceiros/pyellow.png'
-        })
-        document.getElementById("tooltip").addEventListener("click", function(){
-            document.getElementById("tooltip").style.display="none"
-        })
         
+        function selectchange(){
+            var select = document.getElementById("optionsMap");
+            var value = select.options[select.selectedIndex].value
+            if (value == "impressos") {
+                markers = impressos
+            }
+            else if (value == "ebooks") {
+                markers = ebooks
+            }
+            else { markers = vendas }
+
+            document.getElementById("mapadesktop").innerHTML = ""
+            document.getElementById("mapamobile").innerHTML = ""
+            mapa();
+        }
+             mapa()  
     </script>
 </body>
 </html>
