@@ -835,7 +835,7 @@
                     <span id="estantevirtual" style="display: none;"><img src="./img/principaisparceiros/estantevirtual.jfif" />estante
                         Virtual</span>
                     <span id="appstore" style="display: none;"><img src="./img/principaisparceiros/appstore.png" />appStore</span>
-                                        <span id="subnames" class="name"></span>
+                                        <span id="subnames" class="name" style="    word-break: break-all"></span>
 
                 </div>
             </div>
@@ -1487,7 +1487,7 @@
                 
                 {
                     name: "Europa",
-                    subnames:"Países: Alemanha, Áustria, Bélgica, Bulgária, Chipre, Croácia, Dinamarca, Eslováquia, Eslovênia, Espanha, Estônia, Finlândia, França, Grécia, Holanda, Hungria, Irlanda, Itália, Letônia, Lituânia, Luxemburgo, Malta, Polônia, Portugal, República Tcheca, Romênia, Suécia.",
+                    subnames:"Países: AT,BE,BG,CY,CZ,DK,EE,ES,FI,FR,GR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK,DE.",
                     long: 15.5,
                     lat: 49,
                     store:["cda"]
@@ -1532,7 +1532,7 @@
                     .attr("d", d3.geoPath()
                         .projection(projection)
                     )
-                    .style("stroke", "#cbc7c7")
+                    .style("stroke", "#fff")
                 svg.selectAll(".m")
                     .data(markers)
                     .enter()
@@ -1597,7 +1597,15 @@
             document.getElementById("mapamobile").innerHTML = ""
             mapa();
         }
-             mapa()  
+             mapa()  ;
+             setTimeout(() => {
+                europe = [2, 9, 12, 16, 18, 19, 28, 40, 41, 43, 49, 50,55,133, 52, 57, 64, 69, 71, 74, 79, 88, 96, 97, 98, 100, 103, 106, 117, 118, 127, 130, 133, 146, 148, 149, 150, 165]
+                 for (var i = 0; i < europe.length; i++) {
+                     console.log(europe[i])
+                     document.querySelectorAll("path")[europe[i]].style.stroke = "#cbc7c7"
+                 }
+             }, 100);
+             
     </script>
 </body>
 </html>
