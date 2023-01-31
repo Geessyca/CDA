@@ -1487,7 +1487,7 @@
                 
                 {
                     name: "Europa",
-                    subnames:"Países: AT,BE,BG,CY,CZ,DK,EE,ES,FI,FR,GR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK,DE.",
+                    subnames:"Países: AT, BE, BG, CY,CZ,DK,EE, ES, FI, FR, GR, HR, HU, IE, IT, LT, LU, LV, MT, NL, PL, PT, RO, SE, SI, SK, DE.",
                     long: 15.5,
                     lat: 49,
                     store:["cda"]
@@ -1580,6 +1580,13 @@
                 document.getElementById("tooltip").style.display = "none"
             })
 
+       setTimeout(() => {
+                europe = [2, 9, 12, 16, 18, 19, 28, 40, 41, 43, 49, 50, 55, 133, 52, 57, 64, 69, 71, 74, 79, 88, 96, 97, 98, 100, 103, 106, 117, 118, 127, 130, 133, 146, 148, 149, 150, 165]
+                for (var i = 0; i < europe.length; i++) {
+                    console.log(europe[i])
+                    document.querySelectorAll("path")[europe[i]].style.stroke = "#cbc7c7"
+                }
+            }, 300);
         }
         
         function selectchange(){
@@ -1598,13 +1605,7 @@
             mapa();
         }
              mapa()  ;
-             setTimeout(() => {
-                europe = [2, 9, 12, 16, 18, 19, 28, 40, 41, 43, 49, 50,55,133, 52, 57, 64, 69, 71, 74, 79, 88, 96, 97, 98, 100, 103, 106, 117, 118, 127, 130, 133, 146, 148, 149, 150, 165]
-                 for (var i = 0; i < europe.length; i++) {
-                     console.log(europe[i])
-                     document.querySelectorAll("path")[europe[i]].style.stroke = "#cbc7c7"
-                 }
-             }, 200);
+             
              
     </script>
 </body>
