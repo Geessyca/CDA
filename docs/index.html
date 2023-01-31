@@ -1525,6 +1525,7 @@
             
             d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson", function (data) {
                 svg.append("g")
+                    .on('load', posmapa())
                     .selectAll("path")
                     .data(data.features)
                     .enter().append("path")
@@ -1580,13 +1581,6 @@
                 document.getElementById("tooltip").style.display = "none"
             })
 
-       setTimeout(() => {
-                europe = [2, 9, 12, 16, 18, 19, 28, 40, 41, 43, 49, 50, 55, 133, 52, 57, 64, 69, 71, 74, 79, 88, 96, 97, 98, 100, 103, 106, 117, 118, 127, 130, 133, 146, 148, 149, 150, 165]
-                for (var i = 0; i < europe.length; i++) {
-                    console.log(europe[i])
-                    document.querySelectorAll("path")[europe[i]].style.stroke = "#cbc7c7"
-                }
-            }, 300);
         }
         
         function selectchange(){
@@ -1605,7 +1599,16 @@
             mapa();
         }
              mapa()  ;
+             function posmapa(){
+                    setTimeout(() => {
+                     europe = [2, 9, 12, 16, 18, 19, 28, 40, 41, 43, 49, 50, 55, 133, 52, 57, 64, 69, 71, 74, 79, 88, 96, 97, 98, 100, 103, 106, 117, 118, 127, 130, 133, 146, 148, 149, 150, 165]
+                     for (var i = 0; i < europe.length; i++) {
+                         console.log(europe[i])
+                         document.querySelectorAll("path")[europe[i]].style.stroke = "#cbc7c7"
+                     }
+                 }, 300);
              
+             }
              
     </script>
 </body>
