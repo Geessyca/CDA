@@ -1794,7 +1794,7 @@
                      d3.select('#cda').style('display', 'none')
                     d.store.map((store) => d3.select(`#${store}`).style('display', 'flex'))
                     d3.select('#tooltip')
-                        .style('left', (d3.event.pageX + 10) + 'px')
+                        .style('left', d.name=="Oceania"?  `${(d3.event.pageX - 100)}px`: `${(d3.event.pageX + 10)}px`)
                         .style('top', (d3.event.pageY - 80) + 'px')
                         .style('display', 'block')
                 })
