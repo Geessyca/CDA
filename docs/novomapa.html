@@ -1551,6 +1551,10 @@
         
             
         function mapa(type){
+            
+            document.getElementById("mapadesktop").innerHTML = ""
+            
+            document.getElementById("mapamobile").innerHTML = ""
         // The svg
         var svg = d3.select("svg"),
             width = +svg.attr("width"),
@@ -1815,7 +1819,6 @@
                     document.getElementById("mapadesktop").style.width = "100%"
                     document.getElementById("mapadesktop").style.height = "100vh"
                     document.getElementById("ebookdiv").style.display = "none"
-                    document.getElementById("mapadesktop").innerHTML = ""
                     mapa()
                 }
                 else if (value == "ebooks") {
@@ -1823,7 +1826,6 @@
                     document.getElementById("mapadesktop").style.width = "70%"
                     document.getElementById("mapadesktop").style.height = "70vh"
                     document.getElementById("ebookdiv").style.display = ""
-                    document.getElementById("mapadesktop").innerHTML = ""
                     mapa(value)
 
                 }
@@ -1831,7 +1833,6 @@
                     document.getElementById("mapadesktop").style.width = "70%"
                     document.getElementById("mapadesktop").style.height = "70vh"
                     document.getElementById("ebookdiv").style.display = ""
-                    document.getElementById("mapadesktop").innerHTML = ""
                     mapa(value) }
 
             }
