@@ -93,52 +93,60 @@
     background-size: cover;
     }
     .sectext{height: 65vh; justify-content: flex-end; display: flex; align-items: flex-end; flex-direction: column;}
-    select {
-    appearance: none;
+    .legenda{
+        background-color: #fbfbfb;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        top: 0px;
+        margin-bottom: 0px;
+        left: 15px;
+        width: fit-content;
+        margin: 10px;
+    }
+    .legenda span{
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+    }
+     .legenda span img{
+        width: 20px;
+        margin-right: 5px;
+     }
+     .line{
+        width: 20px;
+        border: 3px solid;
+        border-radius: 15px;
+        margin-right: 5px;
+     }
+    .select button {
     outline: 0;
     border: 0;
-    box-shadow: none;
     flex: 1;
     padding: 0 1em;
     color: #857E7E;
-    background-image: none;
     cursor: pointer;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
     line-height: 1rem;
-
+    box-shadow: 0px 0px 2px #b8b8b8;
+    margin: 0 15px;
+    border-radius: 5px;
     }
-    select::-ms-expand {
-    display: none;
-    }
+    
     .select {
-    position: relative;
     display: flex;
-    width: 200px;
     height: 3em;
-    border-radius: .25em;
-    overflow: hidden;
-    background: #FFFFFF;
-    border: 1.16351px solid #E2E7EB;
     }
-    .select::after {
-    content: '\25BC';
-    position: absolute;
-    top: -6px;
-    right: 0;
-    padding: 1em;
-    color: #857E7E;
-    transition: .25s all ease;
-    pointer-events: none;
-    }
-    .select:hover::after {
-    color: #9D2E7F;
+    .select button:hover {
+    background-color: #F5427B;
+    color: white;
     }
     .divselect{
         width: 45%;
-        margin-left: 55%;
+        margin: auto;
     }
     .sectionterc, .sectionqui{
         background: rgba(217, 217, 217, 0.1);
@@ -278,21 +286,25 @@
   stroke-dashoffset: -1000;
           animation-name: setas;
             animation-duration: 1s;
-            animation-direction: alternate;
+            animation-direction: reverse;
             animation-timing-function: ease-in;
             animation-fill-mode:forwards;
     }
     @keyframes setas{
     0% {
-        
-        stroke: transparent;
-        stroke-dashoffset:-1000;
+              
+        stroke-dasharray: 0;
     }
     50%{
+        stroke-dashoffset:10000;
         stroke: transparent;
     }
+    98%{
+        stroke-dashoffset:500;
+    }
     100%{
-        stroke-dashoffset:0;
+        stroke-dashoffset:-1000;
+        stroke: transparent;
     }
     }
     .slick-next,
@@ -392,7 +404,7 @@
         display: none !important;
     }
     #parceiros .slick-track {
-        height: 40px;
+        height: 80px;
     }
      /*@media screen and (min-width: 1441px) {
     h1{
@@ -434,7 +446,10 @@
 #mapamobile{
         display: none;
     }
-    @media screen and (max-width: 599px) {   #mapadesktop{
+    @media screen and (max-width: 599px) {
+         #parceiros .slick-track{
+            height: 60px;
+         }   #mapadesktop{
         display: none;
     }
 #mapamobile{
@@ -575,33 +590,21 @@
    
 </style>
 <style>
-    .markerpoint {
-        cursor: pointer;
-    }
 
     #tooltip {
-        text-align: left;
-        padding: 16px;
-        background-color: #fff;
         width: auto;
-        max-width: 200px;
-        color: black;
+        max-width: 150px;
         position: absolute;
         z-index: 999;
-        box-shadow: 0px 0px 5px #00000082;
         border-radius: 10px;
         height: auto;
         display: none;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background-color: #d3d3d338;
     }
 
-    #tooltip span {
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-items: flex-start;
-        margin: 5px 0;
-        text-transform: capitalize;
-    }
 
     #tooltip span img {
         width: 37px;
@@ -609,7 +612,7 @@
         border-radius: 50%;
         object-position: center;
         object-fit: cover;
-        margin-right: 10px;
+        margin: 5px;
     }
 
     #name {
@@ -632,12 +635,12 @@
         justify-items: center;
     }
     #ebookdiv div img {
-            width: 85%;
+            width: 100px;
     display: flex;
     justify-items: center;
     align-items: center;
     border-radius: 10px;
-    margin: 15px;
+    margin: 10px 5px;
     justify-content: center;
     height: 100px;
     object-fit: contain;
@@ -648,7 +651,7 @@
         #ebookdiv div {
         grid-template-columns: 20% 20% 20% 20% 20% !important;
     }
-    #ebookdiv div img { height: 60px !important;}
+    #ebookdiv div img { width: 60px; height: 60px !important;}
     }
 </style>
 <body>
@@ -866,69 +869,67 @@
         <section class="sectionterc" style="padding-top: 2%;">
             <div class="divselect">
                 <div class="select">
-                    <select id="optionsMap" onchange="selectchange()">
-                        <option value="todos">Todos</option>
-                        <option value="impressos"  selected="selected">Impressos</option>
-                        <option value="ebooks">Ebooks</option>
-                    </select>
+                    <button onclick="select('todos')" id="todos" >Todos</button>
+                    <button onclick="select('impressos')" id="impressos" style="background-color: #F5427B; color: #fff;"> Impressos</button>
+                    <button onclick="select('ebooks')" id="ebooks" >Ebooks</button>
                 </div>
             </div>
             <div class="mapa" style="margin-top: 2%;">
                 <div style="display: flex; flex-wrap: wrap;">
-                    <svg id="mapadesktop" width="100%" height="110vh"></svg>
+                    <svg id="mapadesktop" width="100%" height="90vh"></svg>
                     <svg id="mapamobile" width="100%" height="38vh"></svg>
                     <div id="ebookdiv" style="display: none;">
                         <h4>Distribução de ebooks</h4>
                         <div>
-                            <img src="./img/principaisparceiros/kindle.png" />
+                            <img src="./img/principaisparceiros/applebooks.png" />
+                            <img src="./img/principaisparceiros/barnesenoble.png" />
+                            <img src="./img/principaisparceiros/bookmate.png" />
                             <img src="./img/principaisparceiros/googlebooks.png" />
+                            <img src="./img/principaisparceiros/kindle.png" />
+                            <img src="./img/principaisparceiros/overdrive.png" />
+                            <img src="./img/principaisparceiros/pensatica.png" />
                             <img src="./img/principaisparceiros/scribd.png" />
                             <img src="./img/principaisparceiros/skeelo.png" />
-                            <img src="./img/principaisparceiros/pensatica.jpg" />
-                            <img src="./img/principaisparceiros/bookmate.png" />
-                            <img src="./img/principaisparceiros/barnesnoble.png" />
-                            <img src="./img/principaisparceiros/overdrive.png" />
-                            <img src="./img/principaisparceiros/appstore.png" />
                         </div>
                     </div>
                 </div>
-                
+                <div class="legenda" id="legenda">
+                    <span>Sites do Clube de Autores: <a
+                    href="https://clubedeautores.com.br/" target="_blank" style="color:#714A88; text-decoration: underline;">Brasil</a>, <a href="https://clubedeautores.pt/" target="_blank" style="color:#714A88; text-decoration: underline;">Portugual</a></span>
+                    <span><img src="./img/principaisparceiros/pincda.svg"/>Paises que possuem publicação de livros fisicos e ebooks</span>
+                    <span id="impressolegenda"><span class="line" style="border-color: #F5427B;" ></span>Onde é distribuido livros físicos</span>
+                    <span style="display: none;" id="ebookslegenda"><span class="line" style="border-color: #F59822; " id="ebookslegenda"></span>Onde é distribuido ebooks</span>
+                </div>
                 <div id="tooltip">
-                    <span id="name" class="name"></span>
-                    <span id="cdab" style="display: none;"><a
-                            href="https://clubedeautores.com.br/" target="_blank" style="color:#714A88; text-decoration: underline;"> Site do Clube de
-                            Autores</a></span>
-                    <span id="cdap" style="display: none;"><a
-                            href="https://clubedeautores.pt/" target="_blank" style="color:#714A88; text-decoration: underline;"> Site do Clube de Autores</a></span>
-                    <span id="americanas" style="display: none;"><img src="./img/principaisparceiros/americanas.svg" />americanas</span>
-                    <span id="amazon" style="display: none;"><img src="./img/principaisparceiros/amazon.svg" />amazon</span>
+                    <span id="americanas" style="display: none;"><img src="./img/principaisparceiros/americanas.png" /></span>
+                    <span id="amazon" style="display: none;"><img src="./img/principaisparceiros/amazon.png" /></span>
                     <span id="mercadolivre" style="display: none;"><img
-                            src="./img/principaisparceiros/mercadolivre.svg" />mercadolivre</span>
-                    <span id="submarino" style="display: none;"><img src="./img/principaisparceiros/submarino.svg" />submarino</span>
-                    <span id="cda" style="display: none;"><img src="./img/principaisparceiros/cda.png" />Clube de Autores</span>
-                    <span id="estantevirtual" style="display: none;"><img src="./img/principaisparceiros/estantevirtual.jfif" />estante
-                        Virtual</span>
-                    <span id="livrariacultura" style="display: none;"><img src="./img/principaisparceiros/livrariacultura.png" />Livraria
-                        Cultura</span>
-                    <span id="shoptime" style="display: none;"><img src="./img/principaisparceiros/shoptime.jpg" />Shoptime</span>
-                    <span id="magalu" style="display: none;"><img src="./img/principaisparceiros/magalu.png" />Magalu</span>
-                    <span id="subnames" class="name" style="    word-break: break-all"></span>
-
+                            src="./img/principaisparceiros/mercadolivre.png" /></span>
+                    <span id="cda" style="display: none;"><img src="./img/principaisparceiros/cda.png" /></span>
+                    <span id="estantevirtual" style="display: none;"><img src="./img/principaisparceiros/estantevirtual.png" /></span>
+                    <span id="livrariacultura" style="display: none;"><img src="./img/principaisparceiros/livrariacultura.png" /></span>
+                    <span id="shoptime" style="display: none;"><img src="./img/principaisparceiros/shoptime.png" /></span>
+                    <span id="magalu" style="display: none;"><img src="./img/principaisparceiros/magalu.png" /></span>
                 </div>
                 
             </div>
             <div class="divstore" id="parceiros">
-                <img src="./img/principaisparceiros/americanas.svg"  />
-                <img src="./img/principaisparceiros/amazon.svg"  />
-                <img src="./img/principaisparceiros/mercadolivre.svg"  />
-                <img src="./img/principaisparceiros/submarino.svg"  />
+                <img src="./img/principaisparceiros/americanas.png"  />
+                <img src="./img/principaisparceiros/amazon.png"  />
+                <img src="./img/principaisparceiros/applebooks.png" />
+                <img src="./img/principaisparceiros/barnesenoble.png" />
+                <img src="./img/principaisparceiros/bookmate.png" />
+                <img src="./img/principaisparceiros/estantevirtual.png" />
+                <img src="./img/principaisparceiros/googlebooks.png" />
+                <img src="./img/principaisparceiros/kindle.png" />
+                <img src="./img/principaisparceiros/livrariacultura.png" />
+                <img src="./img/principaisparceiros/magalu.png" />
+                <img src="./img/principaisparceiros/mercadolivre.png"  />
+                <img src="./img/principaisparceiros/overdrive.png" />
+                <img src="./img/principaisparceiros/pensatica.png" />
                 <img src="./img/principaisparceiros/scribd.png"  />
+                <img src="./img/principaisparceiros/shoptime.png" />
                 <img src="./img/principaisparceiros/skeelo.png"  />
-                <img src="./img/principaisparceiros/bookmate.png"  />
-                <img src="./img/principaisparceiros/barnesnoble.png"  />
-                <img src="./img/principaisparceiros/overdrive.png"  />
-                <img src="./img/principaisparceiros/estantevirtual.jfif"  />
-                <img src="./img/principaisparceiros/appstore.png"  />
             </div>
         </section>
         <section class="sectionqua">
@@ -1574,7 +1575,7 @@
         }
         else if(type == "ebooks" || type == "todos") {
             width = window.innerWidth*0.7
-            height = window.innerHeight * 0.7;
+            height = window.innerHeight * 0.9;
             svg = d3.select("#mapadesktop"),
                 width = width,
                 height = height;
@@ -1585,13 +1586,13 @@
         }
         else {
             width = window.innerWidth
-                height = window.innerHeight;
+                height = window.innerHeight*0.7;
             svg = d3.select("#mapadesktop"),
                 width = width,
                 height = height;
             projection = d3.geoMercator()
                 .scale((width + 1) / 2 / Math.PI)
-                .translate([(width / 2), height / 1.5])
+                .translate([(width / 2), height / 1.2])
                 .precision(.1);
         }
 
@@ -1612,43 +1613,11 @@
            {
                name: "Europa",
                long: -9,
-               lat: 41.5,
+               lat: 44.5,
                store: [],
                class: "e",
                color: "#F59822"
            },
-            {
-                name: "Estados Unidos",
-                long: -101,
-                lat: 41,
-                store: ["cda"],
-                class:"i",
-                color:"#9D2E7F"
-            },
-            {
-                name: "Canadá",
-                long: -81,
-                lat: 53,
-                store: ["cda"],
-                class:"i",
-                color:"#9D2E7F"
-            },
-            {
-                name: "Alasca",
-                long: -151,
-                lat: 66.5,
-                store: ["cda"],
-                class:"i",
-                color:"#9D2E7F"
-            },
-            {
-                name: "Havaí",
-                long: -156,
-                lat: 24,
-                store: ["cda"],
-                class:"i",
-                color:"#9D2E7F"
-            },
             {
                 name: "Brasil",
                 long: -50,
@@ -1667,59 +1636,18 @@
             },
             {
                 name: "Portugual",
-                subnames: "Países: AT, BE, BG, CY,CZ,DK,EE, ES, FI, FR, GR, HR, HU, IE, IT, LT, LU, LV, MT, NL, PL, RO, SE, SI, SK, DE.",
                 long: -9,
-                lat: 41.5,
-                store: ["cdap", "cda"],
+                lat: 44.5,
+                store: [],
                 class:"i",
                 color:"#9D2E7F"
-            },
-            {
-                name: "América do Norte",
-                long: -101,
-                lat: 53,
-                class:"e",
-                store:[],
-                color:"#F59822"
-            },
-            {
-                name: "América Central",
-                long: -86,
-                lat: 19,
-                class:"e",
-                store:[],
-                color:"#F59822"
-            },
-            {
-                name: "África",
-                long: 14,
-                lat: 24,
-                class:"e",
-                store:[],
-                color:"#F59822"
-            },
-            {
-                name: "Ásia",
-                long: 89,
-                lat: 49,
-                class:"e",
-                store:[],
-                color:"#F59822"
-            },
-            {
-                name: "Oceania",
-                long: 130,
-                lat: -25,
-                class:"e",
-                store:[],
-                color:"#F59822"
             }
         ];
 
         // Load world shape AND list of connection
         d3.queue()
             .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")  // World shape
-            .defer(d3.csv, "https://raw.githubusercontent.com/Geessyca/mapa-cda/main/clube_lines.csv") // Position of circles
+            .defer(d3.csv, "https://raw.githubusercontent.com/Geessyca/mapa-cda/main/clube_linew.csv") // Position of circles
             .await(ready);
         function ready(error, dataGeo, data) {
 
@@ -1730,9 +1658,33 @@
                 if(row == data[28] || row==data[34]){
                     row.long2=130
                 }
+                if(row.long1 == -8){
+                    row.lat1 = 41
+                }
+                if(row.color == "#9D2E7F"){
+                    row.lat2 = 41
+                }
+                if (row.color == "#000") {
+                    row.long2 = -156
+                    row.lat2=19
+                    row.color="#F5427B"
+                }
+                if(row.color == "#F59822" && !(row.long2<=-139 && row.long2>=-80) && row.lat2<0){
+
+                    row.long2 = row.long2 * 0.5
+                    row.lat2= row.lat2+20
+                }
+           
+                if(row.lat2<-50 && row.color == "#F59822"){
+                    row.lat2= row.lat2 -40
+                    row.long2= row.long2-70
+                }
+                if(row.long2<=-100 && row.color == "#F59822"){
+                    row.long2 = row.long2 -70
+                }
                 source = [+row.long1, +row.lat1]
                 target = [+row.long2, +row.lat2]
-                topush = { type: "LineString", coordinates: [source, target], color: row.color, padding: row.padding, tipo: row.type }
+                topush = { type: "LineString",id:`${row.long2}`, coordinates: [source, target], color: row.color, padding: row.padding, tipo: row.type }
                 link.push(topush)
             })
 
@@ -1754,6 +1706,7 @@
                 .on("load", posmapa())
                 .enter()
                 .append("path")
+                .attr("id", function (d) { return d.id })
                 .attr("d", function (d) { return path(d) })
                 .style("fill", "none")
                 .style("stroke", function (d) { return d.color })
@@ -1779,61 +1732,57 @@
                     return `translate(${p[0] - 20}, ${p[1] - 20})`;
                 }).on('mouseover', function (d) {
                     d3.select(this).style('fill', 'black');
-                    d3.select('#name').text(d.name).attr("style", `color:${d.color}`)
-                    d3.select('#subnames').text(d.subnames ?? "")
                     d3.select('#americanas').style('display', 'none')
                     d3.select('#amazon').style('display', 'none')
                     d3.select('#mercadolivre').style('display', 'none')
                     d3.select('#submarino').style('display', 'none')
-                    d3.select('#cdab').style('display', 'none')
                     d3.select('#estantevirtual').style('display', 'none')
                     d3.select('#livrariacultura').style('display', 'none')
                     d3.select('#shoptime').style('display', 'none')
                     d3.select('#magalu').style('display', 'none')
-                    d3.select('#cdap').style('display', 'none')
-                     d3.select('#cda').style('display', 'none')
+                    d3.select('#cda').style('display', 'none')
                     d.store.map((store) => d3.select(`#${store}`).style('display', 'flex'))
                     d3.select('#tooltip')
-                        .style('left', d.name=="Oceania"?  `${(d3.event.pageX - 100)}px`: `${(d3.event.pageX + 10)}px`)
+                        .style('left', `${(d3.event.pageX + 10)}px`)
                         .style('top', (d3.event.pageY - 80) + 'px')
-                        .style('display', 'block')
+                        .style('display', 'flex')
                 })
             
             document.querySelectorAll(".markerpoint")[0].attributes.href.value = './img/principaisparceiros/pincda.svg'
             document.querySelectorAll(".markerpoint")[1].attributes.href.value = './img/principaisparceiros/pincda.svg'
-            document.querySelectorAll(".markerpoint")[6].attributes.href.value = './img/principaisparceiros/pincda.svg'
-            document.querySelectorAll(".markerpoint")[7].attributes.href.value = './img/principaisparceiros/pincda.svg'
-            document.querySelectorAll(".markerpoint")[8].attributes.href.value = './img/principaisparceiros/pyellow.svg'
-            document.querySelectorAll(".markerpoint")[9].attributes.href.value = './img/principaisparceiros/pyellow.svg'
-            document.querySelectorAll(".markerpoint")[10].attributes.href.value = './img/principaisparceiros/pyellow.svg'
-            document.querySelectorAll(".markerpoint")[11].attributes.href.value = './img/principaisparceiros/pyellow.svg'
-            document.querySelectorAll(".markerpoint")[12].attributes.href.value = './img/principaisparceiros/pyellow.svg'
-
+            document.querySelectorAll(".markerpoint")[2].attributes.href.value = './img/principaisparceiros/pincda.svg'
+            document.querySelectorAll(".markerpoint")[3].attributes.href.value = './img/principaisparceiros/pincda.svg'
     }}
     mapa()
-            function selectchange() {
-                var select = document.getElementById("optionsMap");
-                var value = select.options[select.selectedIndex].value
+            function select(value) {
+                document.getElementById("todos").style.backgroundColor = ""
+                document.getElementById("impressos").style.backgroundColor = ""
+                document.getElementById("ebooks").style.backgroundColor = ""
+                document.getElementById("todos").style.color = ""
+                document.getElementById("impressos").style.color = ""
+                document.getElementById("ebooks").style.color = ""
+                document.getElementById(value).style.backgroundColor="#F5427B"
+                document.getElementById(value).style.color = "#fff"
                 if (value == "impressos") {
                     document.getElementById("stylemark").innerHTML=`<style>.e{display:none !important;}</style>`;
                     document.getElementById("mapadesktop").style.width = "100%"
-                    document.getElementById("mapadesktop").style.height = "100vh"
                     document.getElementById("ebookdiv").style.display = "none"
-                    mapa()
+                    document.getElementById("impressolegenda").style.display=""
+                    document.getElementById("ebookslegenda").style.display="none"
                 }
                 else if (value == "ebooks") {
                     document.getElementById("stylemark").innerHTML = `<style>.i{display:none !important;}</style>`;
                     document.getElementById("mapadesktop").style.width = "70%"
-                    document.getElementById("mapadesktop").style.height = "70vh"
                     document.getElementById("ebookdiv").style.display = ""
-                    mapa(value)
-
+                    document.getElementById("impressolegenda").style.display = "none"
+                    document.getElementById("ebookslegenda").style.display = ""              
                 }
                 else {document.getElementById("stylemark").innerHTML = ``;
                     document.getElementById("mapadesktop").style.width = "70%"
-                    document.getElementById("mapadesktop").style.height = "70vh"
                     document.getElementById("ebookdiv").style.display = ""
-                    mapa(value) }
+                    document.getElementById("impressolegenda").style.display = ""
+                    document.getElementById("ebookslegenda").style.display = ""
+                }
 
             }
             function posmapa() {
