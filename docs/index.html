@@ -515,12 +515,12 @@
     }
 
     #mapa {
-    width: 100%;
+        width: 100%;
         display: flex;
         align-items: center;
     }
-    
-    
+
+
 
     @media screen and (max-width: 599px) {
         #parceiros .slick-track {
@@ -1053,16 +1053,20 @@
             <div class="divselect">
                 <div class="select">
                     <button onclick="select('todos')" id="todos">Todos</button>
-                    <button onclick="select('impressos')" id="impressos"
+                    <button onclick="select('impressos')"  id="impressos"
                         style="background-color: #F5427B; color: #fff;"> Impressos</button>
                     <button onclick="select('ebooks')" id="ebooks">Ebooks</button>
                 </div>
             </div>
-            <div class="mapa" id="mapa" style="margin-top: 2%;">
-              <img  id="mapa-impressos" style="display: block;width:100%" src="./img/principaisparceiros/impressos.png"/>
-            <img id="mapa-ebooks" style="display: none;width:100%" src="./img/principaisparceiros/ebooks.png" />
-            <img  id="mapa-todos" style="display: none;width:100%" src="./img/principaisparceiros/todos.png" />
-               
+            <div class="mapa" id="mapa" style="margin-top: 2%; background-color: whitesmoke;">
+
+                <img id="mapa-impressos"  style="display: block;height:90vh; margin: auto;"
+                    src="./img/principaisparceiros/impressos.png" />
+                <img id="mapa-ebooks" style="display: block;height:90vh; margin: auto;"
+                    src="./img/principaisparceiros/ebooks.png" />
+                <img id="mapa-todos"  style="display: block;height:90vh; margin: auto;"
+                    src="./img/principaisparceiros/todos.png" />
+
             </div>
             <div class="divstore" id="parceiros">
                 <img src="./img/principaisparceiros/americanas.png" />
@@ -1792,9 +1796,18 @@
     </script>
 
 
-   <script>
-    function select(value) {
-          
+    <script>
+        window.onload = select("impressos")
+        function select(value) {            
+            
+            document.getElementById("mapa-impressos").style.display = "none"
+            document.getElementById("mapa-ebooks").style.display = "none"
+            document.getElementById("mapa-todos").style.display = "none"
+            document.getElementById(`mapa-${value}`).style.display = 'block' 
+            document.getElementById("mapa").style.backgroundColor = value == "impressos" ? "whitesmoke" : "white"
+            buttons(value)
+        }
+        function buttons(value){
             document.getElementById("todos").style.backgroundColor = ""
             document.getElementById("impressos").style.backgroundColor = ""
             document.getElementById("ebooks").style.backgroundColor = ""
@@ -1803,14 +1816,8 @@
             document.getElementById("ebooks").style.color = ""
             document.getElementById(value).style.backgroundColor = "#F5427B"
             document.getElementById(value).style.color = "#fff"
-              document.getElementById("mapa-impressos").style.display = "none"
-        document.getElementById("mapa-ebooks").style.display = "none"
-        document.getElementById("mapa-todos").style.display = "none"
-        document.getElementById(`mapa-${value}`).style.display = 'block'
-            document.getElementById("mapa").style.backgroundColor = value == "impressos" ? "whitesmoke" : "white"
-
         }
-   </script>
+    </script>
 </body>
 
 </html>
