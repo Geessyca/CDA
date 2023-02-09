@@ -530,6 +530,12 @@
     }
 
     @media screen and (max-width: 768px) {
+        #loading{margin: calc((40vh - 2rem) / 2) auto auto  !important;
+        height: 20vh !important;}
+        #mapa-impressos,#mapa-ebooks,#mapa-todos{
+            height: auto !important;
+            max-width: 100%;
+        }
         .legenda {
             top: 0px;
             margin-bottom: 0px;
@@ -711,6 +717,59 @@
         }
 
     }
+    
+#loading {
+--spacer: calc(2rem * 1 + 2rem); /* [3] */
+position: relative;
+width: calc(2rem * 3 + 1 * 2rem * 2);
+height: 2rem;
+}
+
+#loading span {
+position: absolute;
+top: 0;
+width: 2rem;
+aspect-ratio: 1 / 1;
+border-radius: 50%;
+background: #F5427B;
+animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+#loading span:nth-child(1) {
+left: 0;
+animation: scale-up 600ms infinite;
+}
+
+#loading span:nth-child(2) {
+left: 0;
+animation: move-right 600ms infinite;
+}
+
+#loading span:nth-child(3) {
+left: calc(var(--spacer) * 1);
+animation: move-right 600ms infinite;
+}
+
+#loading span:nth-child(4) {
+left: calc(var(--spacer) * 2);
+animation: scale-down 600ms infinite;
+}
+
+@keyframes scale-up {
+from { transform: scale(0) }
+to { transform: scale(1) }
+}
+
+@keyframes scale-down {
+from { transform: scale(1) }
+to { transform: scale(0) }
+}
+
+@keyframes move-right {
+from { transform: translate(0, 0) }
+to { transform: translate(var(--spacer), 0) } /* [3] */
+}
+
 </style>
 <style>
     #tooltip {
@@ -1058,8 +1117,11 @@
                     <button onclick="select('ebooks')" id="ebooks">Ebooks</button>
                 </div>
             </div>
-            <div class="mapa" id="mapa" style="margin-top: 2%; background-color: whitesmoke;">
-
+            <div class="mapa" id="loading" style="margin: auto;height: 90vh;margin-top: calc((90vh - 2rem) / 2);display: block;"><span></span>
+            <span></span>
+            <span></span>
+            <span></span></div>
+            <div class="mapa" id="mapa" style="margin-top: 2%; background-color: whitesmoke; display: none;">
                 <img id="mapa-impressos"  style="display: block;height:90vh; margin: auto;"
                     src="./img/principaisparceiros/impressos.png" />
                 <img id="mapa-ebooks" style="display: block;height:90vh; margin: auto;"
@@ -1798,7 +1860,16 @@
 
     <script>
         window.onload = select("impressos")
-        function select(value) {            
+        function select(value){
+            document.getElementById("loading").style.display = "block"
+            document.getElementById("mapa").style.display = "none"
+            selectimg(value)
+            setTimeout(() => {
+                document.getElementById("loading").style.display = "none"
+                document.getElementById("mapa").style.display = "flex"
+            }, 50); 
+        }
+        function selectimg(value) {            
             
             document.getElementById("mapa-impressos").style.display = "none"
             document.getElementById("mapa-ebooks").style.display = "none"
