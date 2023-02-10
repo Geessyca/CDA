@@ -1466,15 +1466,16 @@ to { transform: translate(var(--spacer), 0) } /* [3] */
                         internacionalização
                         permitindo vendas por todo o mundo!</p>
                 </div>
-            </div><div class="slideinfos bottom" id="end">
-                <img class="slideimg" src="./img/nossahistoria/slide2023.svg" />
-                <div class="stylebottom rosa"></div>
-                <h6 class="slideyear">2023</h6>
-                <p class="slidetext">Inauguração do Clube de Autores em Portugal, abrindo caminho para publicações e vendas em um
-                    novo continente
-                </p>
-            
-            
+                <div class="slideinfos bottom" id="end">
+                    <img class="slideimg" src="./img/nossahistoria/slide2023.svg" />
+                    <div class="stylebottom rosa"></div>
+                    <h6 class="slideyear">2023</h6>
+                    <p class="slidetext">Inauguração do Clube de Autores em Portugal, abrindo caminho para publicações e vendas em um
+                        novo continente
+                    </p>
+                
+                
+                </div>
             </div>
         </section>
         <section class="sectionset">
@@ -1864,7 +1865,8 @@ to { transform: translate(var(--spacer), 0) } /* [3] */
             })
             document.querySelectorAll(".slick-next")[id].addEventListener("click", function () {
                 document.querySelectorAll(".slick-prev")[id].style.display = ""
-                if (document.querySelectorAll("#end")[id].classList.contains("slick-active")) {
+                if (document.querySelectorAll("#end")[id-1].classList.contains("slick-active")) {
+
                     document.querySelectorAll(".slick-next")[id].style.display = "none"
                 }
             })
