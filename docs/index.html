@@ -520,7 +520,9 @@
         align-items: center;
     }
 
-
+    .slick-disabled{
+        display: none !important;
+    }
 
     @media screen and (max-width: 599px) {
         #parceiros .slick-track {
@@ -1121,7 +1123,7 @@ to { transform: translate(var(--spacer), 0) } /* [3] */
             <span></span>
             <span></span>
             <span></span></div>
-            <div class="mapa" id="mapa" style="margin-top: 2%; background-color: whitesmoke; display: none;">
+            <div class="mapa" id="mapa" style="background-color: whitesmoke; display: none;">
                 <img id="mapa-impressos"  style="display: none;height:90vh; margin: auto;"
                     src="./img/principaisparceiros/impressos.png" />
                 <img id="mapa-ebooks" style="display: none;height:90vh; margin: auto;"
@@ -1129,24 +1131,6 @@ to { transform: translate(var(--spacer), 0) } /* [3] */
                 <img id="mapa-todos"  style="display: block;height:100vh; margin: auto;"
                     src="./img/principaisparceiros/todos.png" />
 
-            </div>
-            <div class="divstore" id="parceiros">
-                <img src="./img/principaisparceiros/americanas.png" />
-                <img src="./img/principaisparceiros/amazon.png" />
-                <img src="./img/principaisparceiros/applebooks.png" />
-                <img src="./img/principaisparceiros/barnesenoble.png" />
-                <img src="./img/principaisparceiros/bookmate.png" />
-                <img src="./img/principaisparceiros/estantevirtual.png" />
-                <img src="./img/principaisparceiros/googlebooks.png" />
-                <img src="./img/principaisparceiros/kindle.png" />
-                <img src="./img/principaisparceiros/livrariacultura.png" />
-                <img src="./img/principaisparceiros/magalu.png" />
-                <img src="./img/principaisparceiros/mercadolivre.png" />
-                <img src="./img/principaisparceiros/overdrive.png" />
-                <img src="./img/principaisparceiros/pensatica.png" />
-                <img src="./img/principaisparceiros/scribd.png" />
-                <img src="./img/principaisparceiros/shoptime.png" />
-                <img src="./img/principaisparceiros/skeelo.png" />
             </div>
         </section>
         <section class="sectionqua">
@@ -1798,9 +1782,11 @@ to { transform: translate(var(--spacer), 0) } /* [3] */
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
+            initialSlide: 12
 
         });
         $('.nossahistoria').slick({
+            initialSlide: 8,
             dots: false,
             infinite: false,
             speed: 500,
@@ -1831,47 +1817,7 @@ to { transform: translate(var(--spacer), 0) } /* [3] */
 
             ]
         });
-        $('#parceiros').slick({
-            dots: false,
-            infinite: true,
-            speed: 500,
-            centerPadding: '60px',
-            slidesToShow: 7,
-            slidesToScroll: 2,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            responsive: [
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1
-                    }
-                }
-
-            ]
-        });
-        document.addEventListener("DOMContentLoaded", function (event) {
-            let id = 1
-            if (window.innerWidth < 764) {
-                id = 2
-            }
-            document.querySelectorAll(".slick-prev")[id].style.display = "none"
-            document.querySelectorAll(".slick-prev")[id].addEventListener("click", function () {
-                document.querySelectorAll(".slick-next")[id].style.display = ""
-                if (document.querySelectorAll("#start")[id].classList.contains("slick-active")) {
-                    document.querySelectorAll(".slick-prev")[id].style.display = "none"
-                }
-            })
-            document.querySelectorAll(".slick-next")[id].addEventListener("click", function () {
-                document.querySelectorAll(".slick-prev")[id].style.display = ""
-                if (document.querySelectorAll("#end")[id-1].classList.contains("slick-active")) {
-
-                    document.querySelectorAll(".slick-next")[id].style.display = "none"
-                }
-            })
-
-        });
+       
     </script>
 
 
