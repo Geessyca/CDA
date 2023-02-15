@@ -242,21 +242,20 @@
     .infos h5, .infos-rigth h5 {
         margin: 0;
         padding: 0 20px 0 30px;
+        font-weight: 500 ;
     }
 
-    .infos {
+    .infos, .infos-rigth {
         display: flex;
         align-items: flex-start;
     }
-    .infos-rigth {
+    .infos-rigth{
         padding-right: 10px;
-        display: flex;
-        align-items: flex-start;
         justify-content: flex-end;
     }
     .textcomo {
         margin: 0;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 1rem;
         line-height: 20px;
         text-align: left;
@@ -379,7 +378,11 @@
         z-index: 99;
     }
 
-   
+    #parceiros .slick-next,
+    #parceiros .slick-prev {
+        display: none !important;
+    }
+
     .slick-next {
         transform: rotate(135deg);
         right: 8%;
@@ -403,13 +406,16 @@
         margin-top: 15%;
         padding: 2vh 0 13vh;
     }
-    a{
+
+    a {
         color: #F5427B;
     }
-.sectionset div p a{
-    color: #fff;
-    text-decoration: underline;
-}
+
+    .sectionset div p a {
+        color: #fff;
+        text-decoration: underline;
+    }
+
     .sectionset div p {
         font-weight: 500;
         font-size: 1.2rem;
@@ -480,8 +486,38 @@
         display: none !important;
     }
 
-  
+    #parceiros .slick-track {
+        height: 80px;
+    }
 
+    /*@media screen and (min-width: 1441px) {
+    h1{
+        font-size: 5rem;
+        line-height: 4rem;
+    }
+    h2{
+        font-size: 4.5rem;
+        line-height: 5rem;
+    }
+    h3{
+        font-size: 2.8rem;
+        line-height: 3rem;
+    }
+    h4{
+        font-size: 2.3rem;
+    }
+    h5,.slideyear{
+        font-size: 3.2rem;
+    }
+    p,.textcomo, .duvidatitle, .duvidatext{
+        font-size: 2rem;
+         line-height: 2.5rem;
+    }
+    .slidetext{
+        font-size: 1.5rem;
+         line-height: 1.6rem;
+    }
+    }*/
     .nossahistoriamobile {
         display: none;
     }
@@ -496,15 +532,29 @@
         align-items: center;
     }
 
-    .slick-disabled{
+    .slick-disabled {
         display: none !important;
     }
 
+    @media screen and (max-width: 599px) {
+        #parceiros .slick-track {
+            height: 60px;
+        }
 
+    }
 
     @media screen and (max-width: 768px) {
-        #loading{margin: calc((40vh - 2rem) / 2) auto auto  !important;
-        height: 20vh !important;}
+        #loading {
+            margin: calc((40vh - 2rem) / 2) auto auto !important;
+            height: 20vh !important;
+        }
+
+        #mapa-impressos,
+        #mapa-ebooks,
+        #mapa-todos {
+            height: auto !important;
+            max-width: 100%;
+        }
 
         .legenda {
             top: 0px;
@@ -613,7 +663,7 @@
             width: 95% !important;
         }
 
-        .infos h5, .infos-rigth h5 {
+        .infos h5,.infos-rigth h5 {
             margin: 5% 0 0;
             padding: 0 20px 0 0px;
         }
@@ -687,60 +737,152 @@
         }
 
     }
-    
-#loading {
---spacer: calc(2rem * 1 + 2rem); 
-position: relative;
-width: calc(2rem * 3 + 1 * 2rem * 2);
-height: 2rem;
-}
 
-#loading span {
-position: absolute;
-top: 0;
-width: 2rem;
-aspect-ratio: 1 / 1;
-border-radius: 50%;
-background: #F5427B;
-animation-timing-function: cubic-bezier(0, 1, 1, 0);
-}
+    #loading {
+        --spacer: calc(2rem * 1 + 2rem);
+        /* [3] */
+        position: relative;
+        width: calc(2rem * 3 + 1 * 2rem * 2);
+        height: 2rem;
+    }
 
-#loading span:nth-child(1) {
-left: 0;
-animation: scale-up 600ms infinite;
-}
+    #loading span {
+        position: absolute;
+        top: 0;
+        width: 2rem;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        background: #F5427B;
+        animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    }
 
-#loading span:nth-child(2) {
-left: 0;
-animation: move-right 600ms infinite;
-}
+    #loading span:nth-child(1) {
+        left: 0;
+        animation: scale-up 600ms infinite;
+    }
 
-#loading span:nth-child(3) {
-left: calc(var(--spacer) * 1);
-animation: move-right 600ms infinite;
-}
+    #loading span:nth-child(2) {
+        left: 0;
+        animation: move-right 600ms infinite;
+    }
 
-#loading span:nth-child(4) {
-left: calc(var(--spacer) * 2);
-animation: scale-down 600ms infinite;
-}
+    #loading span:nth-child(3) {
+        left: calc(var(--spacer) * 1);
+        animation: move-right 600ms infinite;
+    }
 
-@keyframes scale-up {
-from { transform: scale(0) }
-to { transform: scale(1) }
-}
+    #loading span:nth-child(4) {
+        left: calc(var(--spacer) * 2);
+        animation: scale-down 600ms infinite;
+    }
 
-@keyframes scale-down {
-from { transform: scale(1) }
-to { transform: scale(0) }
-}
+    @keyframes scale-up {
+        from {
+            transform: scale(0)
+        }
 
-@keyframes move-right {
-from { transform: translate(0, 0) }
-to { transform: translate(var(--spacer), 0) } 
-}
+        to {
+            transform: scale(1)
+        }
+    }
 
+    @keyframes scale-down {
+        from {
+            transform: scale(1)
+        }
+
+        to {
+            transform: scale(0)
+        }
+    }
+
+    @keyframes move-right {
+        from {
+            transform: translate(0, 0)
+        }
+
+        to {
+            transform: translate(var(--spacer), 0)
+        }
+
+        /* [3] */
+    }
 </style>
+<style>
+    #tooltip {
+        width: auto;
+        max-width: 150px;
+        position: absolute;
+        z-index: 999;
+        border-radius: 10px;
+        height: auto;
+        display: none;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        background-color: #d3d3d338;
+    }
+
+
+    #tooltip span img {
+        width: 37px;
+        height: 37px;
+        border-radius: 50%;
+        object-position: center;
+        object-fit: cover;
+        margin: 5px;
+    }
+
+    #name {
+        font-weight: 800;
+        font-size: 16px;
+
+        color: #9D2E7F;
+
+    }
+
+
+    #ebookdiv {
+        background-color: white;
+        box-shadow: -3px 1px 5px #acacac;
+        width: 30%;
+    }
+
+    #ebookdiv div {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        justify-items: center;
+    }
+
+    #ebookdiv div img {
+        width: 100px;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        border-radius: 10px;
+        margin: 10px 5px;
+        justify-content: center;
+        height: 100px;
+        object-fit: contain;
+        padding: 2px;
+    }
+
+    @media screen and (max-width:600px) {
+        #ebookdiv {
+            width: 100% !important;
+        }
+
+        #ebookdiv div {
+            grid-template-columns: 20% 20% 20% 20% 20% !important;
+        }
+
+        #ebookdiv div img {
+            width: 60px;
+            height: 60px !important;
+        }
+    }
+</style>
+
 <body>
     <div id="stylemark">
         <style>
@@ -997,23 +1139,33 @@ to { transform: translate(var(--spacer), 0) }
         </section>
         <section class="sectionsec">
             <h3>Mais alcance e visibilidade</h3>
-            <p style="padding: 1% 0;">Ao publicar no Clube de Autores, seu livro pode ser revendido nas maiores
+            <p style="padding: 1% 0; font-weight: 500;">Ao publicar no Clube de Autores, seu livro pode ser revendido nas maiores
                 livrarias e marketplaces do mundo - e
                 gratuitamente.
             </p>
             <h4 style="padding: 0;">Confira no mapa nossos principais parceiros e locais de distribuição.</h4>
         </section>
         <section class="sectionterc" >
-            <div class="mapa" id="loading" style="margin: auto;height: 100vh;margin-top: calc((100vh - 2rem) / 2);display: block;"><span></span>
-            <span></span>
-            <span></span>
-            <span></span></div>
+            <div class="divselect" style="display:none">
+                <div class="select">
+                    <button onclick="select('todos')" id="todos">Todos</button>
+                    <button onclick="select('impressos')" id="impressos"
+                        style="background-color: #F5427B; color: #fff;"> Impressos</button>
+                    <button onclick="select('ebooks')" id="ebooks">Ebooks</button>
+                </div>
+            </div>
+            <div class="mapa" id="loading"
+                style="margin: auto;height: 100vh;margin-top: calc((100vh - 2rem) / 2);display: block;"><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="mapa" id="mapa" style="background-color: whitesmoke; display: none;">
-                <img id="mapa-impressos"  style="display: none;height:90vh; margin: auto;"
+                <img id="mapa-impressos" style="display: none;height:90vh; margin: auto;"
                     src="./img/principaisparceiros/impressos.png" />
                 <img id="mapa-ebooks" style="display: none;height:90vh; margin: auto;"
                     src="./img/principaisparceiros/ebooks.png" />
-                <img id="mapa-todos"  style="display: block;height:100vh; margin: auto;"
+                <img id="mapa-todos" style="display: block;height:100vh; margin: auto;"
                     src="./img/principaisparceiros/todos.png" />
 
             </div>
@@ -1025,7 +1177,7 @@ to { transform: translate(var(--spacer), 0) }
             </div>
         </section>
         <section class="sectionqui">
-            <p style="font-style: italic;width: 56%;margin-left: 22%;">Importante: A venda do seu livro nas livrarias e
+            <p style="font-style: italic;width: 56%;margin-left: 22%; font-weight: 500;">Importante: A venda do seu livro nas livrarias e
                 lojas parceiras está condicionada à satisfação dos requisitos técnicos
                 exigidos por cada uma das parceiras. Algumas livrarias ou lojas exigem que a obra possua ISBN, outras
                 que o ebook esteja
@@ -1208,7 +1360,7 @@ to { transform: translate(var(--spacer), 0) }
 
                 </div>
 
-                <div class="slideinfos" >
+                <div class="slideinfos">
                     <img class="slideimg" src="./img/nossahistoria/slide2022.svg" />
                     <div class="stylebottom"></div>
                     <h6 class="slideyear">2022</h6>
@@ -1220,10 +1372,11 @@ to { transform: translate(var(--spacer), 0) }
                 </div>
                 <div class="slideinfos top" id="end">
                     <h6 class="slideyear">2023</h6>
-                    <p class="slidetext">Inauguração do Clube de Autores em Portugal, abrindo caminho para publicações e vendas em um novo continente</p>
+                    <p class="slidetext">Inauguração do Clube de Autores em Portugal, abrindo caminho para publicações e
+                        vendas em um novo continente</p>
                     <div class="styletop"></div>
                     <img class="slideimg" src="./img/nossahistoria/slide2023.svg" />
-                
+
                 </div>
             </div>
             <div class="nossahistoriamobile">
@@ -1323,7 +1476,7 @@ to { transform: translate(var(--spacer), 0) }
 
 
                 </div>
-                <div class="slideinfos" >
+                <div class="slideinfos">
                     <img class="slideimg" src="./img/nossahistoria/slide2022.svg" />
                     <div class="stylebottom"></div>
                     <h6 class="slideyear">2022</h6>
@@ -1339,11 +1492,12 @@ to { transform: translate(var(--spacer), 0) }
                     <img class="slideimg" src="./img/nossahistoria/slide2023.svg" />
                     <div class="stylebottom rosa"></div>
                     <h6 class="slideyear">2023</h6>
-                    <p class="slidetext">Inauguração do Clube de Autores em Portugal, abrindo caminho para publicações e vendas em um
+                    <p class="slidetext">Inauguração do Clube de Autores em Portugal, abrindo caminho para publicações e
+                        vendas em um
                         novo continente
                     </p>
-                
-                
+
+
                 </div>
             </div>
         </section>
@@ -1361,7 +1515,11 @@ to { transform: translate(var(--spacer), 0) }
                 </div>
                 <p style="text-align: start; margin:10px 0;">Precisa de assessoria para ISBN ou conversão para o formato
                     EPub? Contrate diretamente de centenas de profissionais do
-                    mercado editorial acessando: <a href="https://profissionaisdolivro.com.br/servicos/registro-de-isbn--20">registro de ISBN</a> e <a href="https://profissionaisdolivro.com.br/servicos/conversao-pdf-epub-e-publicacao-clube-de-autores">conversão para ePUB</a>
+                    mercado editorial acessando: <a
+                        href="https://profissionaisdolivro.com.br/servicos/registro-de-isbn--20">registro de ISBN</a> e
+                    <a
+                        href="https://profissionaisdolivro.com.br/servicos/conversao-pdf-epub-e-publicacao-clube-de-autores">conversão
+                        para ePUB</a>
                 </p>
                 <button>Começar a vender</button>
             </div>
@@ -1473,7 +1631,8 @@ to { transform: translate(var(--spacer), 0) }
                         </div>
                         <div class="duvidatext" id="text7">
                             Sim. Há 3 maneiras de cálculo dos seus royalties:</br>
-                            a) Para vendas feitas diretamente no site do Clube de Autores no país onde você publicou, você
+                            a) Para vendas feitas diretamente no site do Clube de Autores no país onde você publicou,
+                            você
                             receberá exatamente o que determinou no ato da publicação.</br>
                             b) Para vendas em qualquer livraria ou marketplace ou em sites internacionais do Clube de
                             Autores, você receberá 20% do preço de venda final do livro.</br>
@@ -1481,8 +1640,9 @@ to { transform: translate(var(--spacer), 0) }
                             (aplicáveis, portanto, apenas a ebooks ou audiolivros), você receberá 50% do valor líquido
                             repassado por cada canal ao Clube de Autores.</br>
                             Todas essas regras podem ser vistas em detalhes no contrato com o autor, aceito no ato do
-                            seu cadastro e que pode ser acessado <a href="https://clubedeautores.com.br/webpage/direitosautorais">aqui</a>.
-                            
+                            seu cadastro e que pode ser acessado <a
+                                href="https://clubedeautores.com.br/webpage/direitosautorais">aqui</a>.
+
 
                         </div>
                     </div>
@@ -1702,11 +1862,41 @@ to { transform: translate(var(--spacer), 0) }
 
             ]
         });
-       
+
     </script>
 
 
+    <script>
+        window.onload = select("todos")
+        function select(value) {
+            document.getElementById("loading").style.display = "block"
+            document.getElementById("mapa").style.display = "none"
+            selectimg(value)
+            setTimeout(() => {
+                document.getElementById("loading").style.display = "none"
+                document.getElementById("mapa").style.display = "flex"
+            }, 50);
+        }
+        function selectimg(value) {
 
+            document.getElementById("mapa-impressos").style.display = "none"
+            document.getElementById("mapa-ebooks").style.display = "none"
+            document.getElementById("mapa-todos").style.display = "none"
+            document.getElementById(`mapa-${value}`).style.display = 'block'
+            document.getElementById("mapa").style.backgroundColor = value == "impressos" ? "whitesmoke" : "white"
+            buttons(value)
+        }
+        function buttons(value) {
+            document.getElementById("todos").style.backgroundColor = ""
+            document.getElementById("impressos").style.backgroundColor = ""
+            document.getElementById("ebooks").style.backgroundColor = ""
+            document.getElementById("todos").style.color = ""
+            document.getElementById("impressos").style.color = ""
+            document.getElementById("ebooks").style.color = ""
+            document.getElementById(value).style.backgroundColor = "#F5427B"
+            document.getElementById(value).style.color = "#fff"
+        }
+    </script>
 </body>
 
 </html>
