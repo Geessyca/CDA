@@ -1147,25 +1147,13 @@
             <h4 style="padding: 0;">Confira no mapa nossos principais parceiros e locais de distribuição.</h4>
         </section>
         <section class="sectionterc" >
-            <div class="divselect" style="display:none">
-                <div class="select">
-                    <button onclick="select('todos')" id="todos">Todos</button>
-                    <button onclick="select('impressos')" id="impressos"
-                        style="background-color: #F5427B; color: #fff;"> Impressos</button>
-                    <button onclick="select('ebooks')" id="ebooks">Ebooks</button>
-                </div>
-            </div>
             <div class="mapa" id="loading"
                 style="margin: auto;height: 100vh;margin-top: calc((100vh - 2rem) / 2);display: block;"><span></span>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <div class="mapa" id="mapa" style="background-color: whitesmoke; display: none;">
-                <img id="mapa-impressos" style="display: none;height:90vh; margin: auto;"
-                    src="./img/principaisparceiros/impressos.png" />
-                <img id="mapa-ebooks" style="display: none;height:90vh; margin: auto;"
-                    src="./img/principaisparceiros/ebooks.png" />
+            <div class="mapa" id="mapa" style=" display: none;">
                 <img id="mapa-todos" style="display: block;height:100vh; margin: auto;"
                     src="./img/principaisparceiros/todos.png" />
 
@@ -1869,6 +1857,7 @@
 
     <script>
         window.onload = select("todos")
+
         function select(value) {
             document.getElementById("loading").style.display = "block"
             document.getElementById("mapa").style.display = "none"
@@ -1879,23 +1868,8 @@
             }, 50);
         }
         function selectimg(value) {
-
-            document.getElementById("mapa-impressos").style.display = "none"
-            document.getElementById("mapa-ebooks").style.display = "none"
             document.getElementById("mapa-todos").style.display = "none"
             document.getElementById(`mapa-${value}`).style.display = 'block'
-            document.getElementById("mapa").style.backgroundColor = value == "impressos" ? "whitesmoke" : "white"
-            buttons(value)
-        }
-        function buttons(value) {
-            document.getElementById("todos").style.backgroundColor = ""
-            document.getElementById("impressos").style.backgroundColor = ""
-            document.getElementById("ebooks").style.backgroundColor = ""
-            document.getElementById("todos").style.color = ""
-            document.getElementById("impressos").style.color = ""
-            document.getElementById("ebooks").style.color = ""
-            document.getElementById(value).style.backgroundColor = "#F5427B"
-            document.getElementById(value).style.color = "#fff"
         }
     </script>
 </body>
