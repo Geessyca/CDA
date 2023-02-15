@@ -239,7 +239,7 @@
         flex-direction: row-reverse;
     }
 
-    .infos h5 {
+    .infos h5, .infos-rigth h5 {
         margin: 0;
         padding: 0 20px 0 30px;
     }
@@ -248,7 +248,11 @@
         display: flex;
         align-items: flex-start;
     }
-
+    .infos-rigth {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+    }
     .textcomo {
         margin: 0;
         font-weight: 600;
@@ -374,11 +378,7 @@
         z-index: 99;
     }
 
-    #parceiros .slick-next,
-    #parceiros .slick-prev {
-        display: none !important;
-    }
-
+   
     .slick-next {
         transform: rotate(135deg);
         right: 8%;
@@ -479,38 +479,8 @@
         display: none !important;
     }
 
-    #parceiros .slick-track {
-        height: 80px;
-    }
+  
 
-    /*@media screen and (min-width: 1441px) {
-    h1{
-        font-size: 5rem;
-        line-height: 4rem;
-    }
-    h2{
-        font-size: 4.5rem;
-        line-height: 5rem;
-    }
-    h3{
-        font-size: 2.8rem;
-        line-height: 3rem;
-    }
-    h4{
-        font-size: 2.3rem;
-    }
-    h5,.slideyear{
-        font-size: 3.2rem;
-    }
-    p,.textcomo, .duvidatitle, .duvidatext{
-        font-size: 2rem;
-         line-height: 2.5rem;
-    }
-    .slidetext{
-        font-size: 1.5rem;
-         line-height: 1.6rem;
-    }
-    }*/
     .nossahistoriamobile {
         display: none;
     }
@@ -529,20 +499,12 @@
         display: none !important;
     }
 
-    @media screen and (max-width: 599px) {
-        #parceiros .slick-track {
-            height: 60px;
-        }
 
-    }
 
     @media screen and (max-width: 768px) {
         #loading{margin: calc((40vh - 2rem) / 2) auto auto  !important;
         height: 20vh !important;}
-        #mapa-impressos,#mapa-ebooks,#mapa-todos{
-            height: auto !important;
-            max-width: 100%;
-        }
+
         .legenda {
             top: 0px;
             margin-bottom: 0px;
@@ -650,7 +612,7 @@
             width: 95% !important;
         }
 
-        .infos h5 {
+        .infos h5, .infos-rigth h5 {
             margin: 5% 0 0;
             padding: 0 20px 0 0px;
         }
@@ -726,7 +688,7 @@
     }
     
 #loading {
---spacer: calc(2rem * 1 + 2rem); /* [3] */
+--spacer: calc(2rem * 1 + 2rem); 
 position: relative;
 width: calc(2rem * 3 + 1 * 2rem * 2);
 height: 2rem;
@@ -774,85 +736,10 @@ to { transform: scale(0) }
 
 @keyframes move-right {
 from { transform: translate(0, 0) }
-to { transform: translate(var(--spacer), 0) } /* [3] */
+to { transform: translate(var(--spacer), 0) } 
 }
 
 </style>
-<style>
-    #tooltip {
-        width: auto;
-        max-width: 150px;
-        position: absolute;
-        z-index: 999;
-        border-radius: 10px;
-        height: auto;
-        display: none;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        background-color: #d3d3d338;
-    }
-
-
-    #tooltip span img {
-        width: 37px;
-        height: 37px;
-        border-radius: 50%;
-        object-position: center;
-        object-fit: cover;
-        margin: 5px;
-    }
-
-    #name {
-        font-weight: 800;
-        font-size: 16px;
-
-        color: #9D2E7F;
-
-    }
-
-
-    #ebookdiv {
-        background-color: white;
-        box-shadow: -3px 1px 5px #acacac;
-        width: 30%;
-    }
-
-    #ebookdiv div {
-        display: grid;
-        grid-template-columns: 30% 30% 30%;
-        justify-items: center;
-    }
-
-    #ebookdiv div img {
-        width: 100px;
-        display: flex;
-        justify-items: center;
-        align-items: center;
-        border-radius: 10px;
-        margin: 10px 5px;
-        justify-content: center;
-        height: 100px;
-        object-fit: contain;
-        padding: 2px;
-    }
-
-    @media screen and (max-width:600px) {
-        #ebookdiv {
-            width: 100% !important;
-        }
-
-        #ebookdiv div {
-            grid-template-columns: 20% 20% 20% 20% 20% !important;
-        }
-
-        #ebookdiv div img {
-            width: 60px;
-            height: 60px !important;
-        }
-    }
-</style>
-
 <body>
     <div id="stylemark">
         <style>
@@ -1115,15 +1002,7 @@ to { transform: translate(var(--spacer), 0) } /* [3] */
             </p>
             <h4 style="padding: 0;">Confira no mapa nossos principais parceiros e locais de distribuição.</h4>
         </section>
-        <section class="sectionterc" style="padding-top: 2%; ">
-            <div class="divselect" style="display:none">
-                <div class="select">
-                    <button onclick="select('todos')" id="todos">Todos</button>
-                    <button onclick="select('impressos')"  id="impressos"
-                        style="background-color: #F5427B; color: #fff;"> Impressos</button>
-                    <button onclick="select('ebooks')" id="ebooks">Ebooks</button>
-                </div>
-            </div>
+        <section class="sectionterc" >
             <div class="mapa" id="loading" style="margin: auto;height: 100vh;margin-top: calc((100vh - 2rem) / 2);display: block;"><span></span>
             <span></span>
             <span></span>
@@ -1165,7 +1044,7 @@ to { transform: translate(var(--spacer), 0) } /* [3] */
             </div>
             <div class="comofunciona" style="width: 50%; margin: 5% 28%;">
                 <div class="imgcomo"><img src="./img/comofunciona/icon2.svg" /></div>
-                <div class="infos">
+                <div class="infos-rigth">
                     <h5>2.</h5>
                     <div class="textcomo" style="width: 73%;">Você continua podendo mudar aspectos do seu livro a
                         qualquer momento. No entanto, essas mudanças levarão até 30 dias
@@ -1185,7 +1064,7 @@ to { transform: translate(var(--spacer), 0) } /* [3] */
             </div>
             <div class="comofunciona" style="width: 50%; margin: 5% 28%;">
                 <div class="imgcomo"><img src="./img/comofunciona/icon4.svg" /></div>
-                <div class="infos">
+                <div class="infos-rigth">
                     <h5>4.</h5>
                     <div class="textcomo" style="width: 73%;">Se seu livro (impresso ou ebook) for comprado no site do
                         Clube de Autores no qual tiver publicado, você receberá
@@ -1205,7 +1084,7 @@ to { transform: translate(var(--spacer), 0) } /* [3] */
             </div>
             <div class="comofunciona" style="width: 50%; margin: 5% 28%;">
                 <div class="imgcomo"><img src="./img/comofunciona/icon6.svg" /></div>
-                <div class="infos">
+                <div class="infos-rigth">
                     <h5>6.</h5>
                     <div class="textcomo" style="width: 73%;">Se a comercialização da sua obra for feita em lojas
                         conveniadas com o Clube que trabalhem no modelo de assinatura ou
@@ -1231,7 +1110,7 @@ to { transform: translate(var(--spacer), 0) } /* [3] */
             </div>
             <div class="comofunciona" style="width: 50%; margin: 5% 28%;">
                 <div class="imgcomo"><img src="./img/comofunciona/icon8.svg" /></div>
-                <div class="infos">
+                <div class="infos-rigth">
                     <h5>8.</h5>
                     <div class="textcomo" style="width: 73%;">Todas as vendas feitas a partir de canais parceiros serão
                         reportadas ao relatório do autor, no site do Clube, em até 90
@@ -1826,37 +1705,7 @@ to { transform: translate(var(--spacer), 0) } /* [3] */
     </script>
 
 
-    <script>
-        window.onload = select("todos")
-        function select(value){
-            document.getElementById("loading").style.display = "block"
-            document.getElementById("mapa").style.display = "none"
-            selectimg(value)
-            setTimeout(() => {
-                document.getElementById("loading").style.display = "none"
-                document.getElementById("mapa").style.display = "flex"
-            }, 50); 
-        }
-        function selectimg(value) {            
-            
-            document.getElementById("mapa-impressos").style.display = "none"
-            document.getElementById("mapa-ebooks").style.display = "none"
-            document.getElementById("mapa-todos").style.display = "none"
-            document.getElementById(`mapa-${value}`).style.display = 'block' 
-            document.getElementById("mapa").style.backgroundColor = value == "impressos" ? "whitesmoke" : "white"
-            buttons(value)
-        }
-        function buttons(value){
-            document.getElementById("todos").style.backgroundColor = ""
-            document.getElementById("impressos").style.backgroundColor = ""
-            document.getElementById("ebooks").style.backgroundColor = ""
-            document.getElementById("todos").style.color = ""
-            document.getElementById("impressos").style.color = ""
-            document.getElementById("ebooks").style.color = ""
-            document.getElementById(value).style.backgroundColor = "#F5427B"
-            document.getElementById(value).style.color = "#fff"
-        }
-    </script>
+
 </body>
 
 </html>
