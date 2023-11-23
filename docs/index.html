@@ -19,7 +19,7 @@
     <script type="text/javascript" src=" https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" media="screen" href="https://clubedeautores.com.br/packs/css/application-1c2df39b.css" data-turbolinks-track="reload">
+    <link rel="stylesheet" media="screen" href="https://clubedeautores.com.br/packs/css/home-f69b52f3.css" data-turbolinks-track="reload">
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
     <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
@@ -28,6 +28,7 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Exo&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Exo:wght@500;600;700;800;900&display=swap');
 
     body {
         margin: 0;
@@ -100,12 +101,11 @@
     }
 
     .sectionprin {
-        background-image: url('./img/bgprin.svg');
-        height: 80vh;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 3% 5%;
+        background-image: url("./img/bginit.png");
+        width: 100%;
+        background-position: center;
+        height: 55vh;
+        margin-top: -5vh;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -187,10 +187,56 @@
     }
 
     .sectionqui {
-        background: rgba(217, 217, 217, 0.1);
+        background: #CCCCCC33;
         margin: 0;
+        padding-bottom: 15%;
     }
-
+    .funciona{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .funciona .slideinfos{
+        flex-direction: row;
+        
+        margin: 10px 0 ;
+    }
+    .funciona .stylebottom {
+        background: #714A88;
+        height: 186px;
+        position: relative;
+        width: 19px;
+        margin: 0 30px;
+    }
+    .funciona .stylebottom:before {
+    border: 15px solid transparent;
+    border-bottom-color: #714A88;
+    content: "";
+    top: 78px;
+    position: absolute;
+    margin: auto;
+    left: 15px;
+    transform: rotate(90deg);
+}
+.funciona .styletop {
+        background: #9D2E7F;
+        height: 186px;
+        position: relative;
+        width: 19px;
+        margin: 0 30px;
+    }
+    .funciona .styletop:before {
+    border: 15px solid transparent;
+    border-bottom-color: #9D2E7F;
+    content: "";
+    top: 78px;
+    position: absolute;
+    margin: auto;
+    left: -30px;
+    transform: rotate(270deg);
+}
     .divmap {
         width: 100%;
         height: 90vh;
@@ -214,20 +260,21 @@
 
     .sectionqua {
         width: 100%;
-        height: 60vh;
-        background-image: url(./img/bgsec.png);
-        background-position: top;
-        background-repeat: no-repeat;
-        background-size: cover;
         display: flex;
         align-items: center;
+        background: #CCCCCC33;
+        padding: 10vh 0;
         justify-content: center;
     }
 
     .divqua {
         background: #714A88;
-        border-radius: 55.5px;
-        width: 50%;
+        border-radius: 40px;
+        width: 40%;
+        height: 130px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .funcionamento .slick-prev:before, .funcionamento .slick-next:before{
         color: transparent !important;
@@ -281,31 +328,56 @@
         display: block;
         margin: 91px 0;
     }
-
+.containerslide{
+    display: flex;
+    flex-direction: column;
+    max-width: 326px !important;
+    height: 126px;
+}
     .slideyear {
-        margin-top: 0;
-        font-weight: 700;
-        font-size: 26px;
-        letter-spacing: -0.015em;
-        color: #714A88;
-        margin-bottom: 30px;
-        text-align: center;
-
+        font-weight: 600 !important;
+        font-size: 48px;
+        color: #714A88;display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
     }
-
+    .slideyear h3{
+font-size: 32px !important;
+font-weight: 600 !important;
+text-align: left;
+        color: #714A88;
+width: auto !important;
+padding: 0 !important;
+line-height: 30px;
+margin-top:-15px !important;
+margin-left: 32px !important;    margin-top: -10px;
+    }
+    .slideinfos.top .containerslide{
+        margin-right: 30px;
+    }
+    .funciona .slideinfos:first-child{
+        margin-top: 10% !important;
+    }
+    .funciona .slideinfos{
+        margin-left: 10% !important;
+    }
+    .funciona .slideinfos.top{
+        margin-left: 0% !important;
+        margin-right: 20.7% !important;
+    }
     .slidetext {
         height: 260px;
-        font-weight: 400;
+        font-weight: 600;
         font-size: 16px;
         line-height: 21px;
-        text-align: center;
+        text-align: justify;
         letter-spacing: -0.015em;
-        color: #000000;
+        color: #714A88;
         width: 100%;
         margin: 0;
         word-break: break-word;
     }
-
     .stylebottom {
         background: #714A88;
         height: 19px;
@@ -410,7 +482,6 @@
         width: 100%;
         display: flex;
         align-items: center;
-        margin-top: 15%;
         padding: 2vh 0 13vh;
     }
 
@@ -551,6 +622,10 @@
     }
 
     @media screen and (max-width: 768px) {
+        .sectionprin{
+            margin-top: 0;
+            height: 25vh;
+        }
         #loading {
             margin: calc((40vh - 2rem) / 2) auto auto !important;
             height: 20vh !important;
@@ -574,14 +649,6 @@
             margin-top: -16px !important;
         }
 
-        .sectionprin {
-            background-image: url("./img/bgmobile.png");
-        }
-
-        .sectionprin div {
-            display: none;
-        }
-
         .nossahistoriamobile {
             display: block;
         }
@@ -596,7 +663,7 @@
         }
 
         h4 {
-            font-size: 18px;
+            font-size: 16px;
             margin: 0;
             width: 100%;
         }
@@ -621,14 +688,6 @@
         .slick-next,
         .slick-prev {
             top: 20%;
-        }
-
-        .sectionprin {
-            padding: 0 3%;
-            flex-direction: column;
-            justify-content: center;
-            background-position: center;
-            background-size: cover;
         }
 
         .sectext {
@@ -675,9 +734,6 @@
             padding: 0 20px 0 0px;
         }
 
-        .sectionqua {
-            height: 35vh;
-        }
 
         .divqua {
             width: 80%;
@@ -719,14 +775,45 @@
             border-bottom-color: #9D2E7F !important;
         }
 
-        .slideinfos.top {
-            display: none !important;
-        }
+   
 
         img.slideimg {
             margin: auto;
+            width: 55px;
         }
+        .slideyear{
+            font-size: 30px;
+        }
+        .slideyear h3{
+            font-size: 20px !important;
+            margin-left: 15px !important;
+        }
+        .slideinfos.top .containerslide{
+        margin-right: 0;
+        width: auto;
+        height: 100% !important;
+    }p#hidd1, p#hidd2{
+        margin-right: 0;
+        width: auto;
+        height: 100% !important;
 
+    }
+    .slideinfos{
+        height: auto;
+    }
+    .vejacompl{
+        display: none;
+    }
+    .funciona .slideinfos{
+        margin-left: 0 !important;
+        align-items: flex-start !important;
+        margin-top: 15px;
+    }
+    .funciona .slideinfos.top{
+        margin-left: 0% !important;
+        margin-right: 0 !important;
+        flex-direction: row-reverse !important;
+    }
     }
 
     #loading {
@@ -798,6 +885,101 @@
 
         /* [3] */
     }
+    .sectionnew{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 5vh 0 10vh;
+        flex-direction: column;
+    }
+    .sectionnew h4{
+        font-size: 25px;
+        font-weight: 500 !important;
+        color: #724A88;
+        margin: 0 !important;
+        width: auto;
+        
+    }
+    .sectionnew .container {
+      width: 80%;
+      margin: 10vh auto;
+      text-align: left;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .sectionnew h4{font-size: 20px;}
+        .sectionnew .container {
+      width: 98%  !important;
+      margin-bottom: 0 !important;
+    }
+    .sectionnew .toggle-list {
+    margin: 5vh 2vh !important;
+    }
+    }
+    .sectionnew .toggle-list h4{
+        padding: 20px 30px !important;
+        color: #fff;
+      font-size: 20px;
+      font-weight: 700 !important;
+      text-align: left;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .sectionnew .toggle-list {
+      cursor: pointer;
+      margin: 5vh;
+      background-color: #CE3087;
+      border-radius: 35px;
+      box-shadow: 6.147481918334961px 6.147481918334961px 52.69270324707031px 0px #00000033;
+      
+    }
+    .sectionnew .toggle-list h4::after {  
+        content: " ";
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-top: 4px solid #fff;
+        border-left: 4px solid #fff;
+        transform: rotate(225deg);
+        margin-right: 10px ;
+    }
+    .sectionnew .toggle-list.active h4::after {
+        transform: rotate(45deg);
+        margin-top: 8px;
+    }
+
+    .sectionnew .list {
+      display: none;
+        width: 100%;
+    }
+
+    .sectionnew .list-item {
+      list-style: none;
+      background-color: #F5F5F5;
+      width: 100%;
+      display: flex;
+      border-bottom: 0.88px solid #724A88;    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 30px;
+    }
+    .sectionnew .list-item p{margin: 0 !important; padding: 0 !important;}
+    .sectionnew .list-item p:first-child{
+font-size: 18px;
+font-weight: 400;
+text-align: left;
+color: #5A4A9E;
+width: 35%;
+    }
+    .sectionnew .list-item p:last-child{
+font-size: 13px;
+font-weight: 400;
+text-align: left;
+color: #714A88;width: 70%;
+    }
+    .sectionnew .list-item:last-child {border-bottom-left-radius:35px ;border-bottom-right-radius:35px ; border-bottom:none;}
 </style>
 <style>
     #tooltip {
@@ -871,6 +1053,38 @@
             width: 60px;
             height: 60px !important;
         }
+    }
+    .vejacompl{
+font-size: 10px;
+font-weight: 600;
+line-height: 20px;
+letter-spacing: 0px;
+color: #9D2E7F;
+background: #F5F5F5;
+border: none;
+width: 100%;
+height: 55px;
+cursor: pointer;
+    }
+    .vejacompl p{
+        margin-left: calc(50% - 5px) !important;
+    }
+    .vejacompl p::after {  
+        content: " ";
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid #9D2E7F;
+        border-left: 2px solid #9D2E7F;
+        transform: rotate(225deg);
+        margin-right: 10px ;
+    }
+    p#hidd1,p#hidd2{
+        height: 96px;
+        overflow: hidden;
+    }
+    #hidd1-sl,#hidd2-sl{
+        margin-bottom: 0;
     }
 </style>
 
@@ -1061,36 +1275,10 @@
         </div>
     </div>
     <main>
-        <section class="sectionprin" style="display: none;">
-            <div>
-                <h1>Sua obra pelo</h1><br />
-                <h2 style="background-color: #9D2E7F;border-radius: 46px; padding: 10px 20px;width: fit-content;">_
-                    mundo</h2>
-            </div>
-            <div class="sectext">
-                <h2 style="text-align: right;">Agora,<br />
-                    seus livros<br />
-                    <div style="display: flex; justify-content: flex-end; align-items: center;">
-                        <h2>são</h2>
-                        <h2
-                            style="margin:  15px; background: #F5427B;border-radius: 26px; padding:5px;width: fit-content;flex: right;">
-                            vendidos</h2><br />
-                        <h2 style="text-align: right;">nas</h2>
-                    </div>
-                    <h2 style="background: #F5427B;border-radius: 26px; padding:5px;width: fit-content;flex: right;">
-                        maiores livrarias</h2>
-                    <br />
-                    <h2 style="background: #F5427B;border-radius: 26px; padding:5px;width: fit-content;flex: right;">do
-                        planeta.</h2>
-                </h2>
-            </div>
-        </section>
+        <section class="sectionprin"></section>
         <section class="sectionsec">
-            <h3>Mais alcance e visibilidade</h3>
-            <p style="padding: 1% 0; font-weight: 500;">Ao publicar no Clube de Autores, seu livro pode ser revendido nas maiores
-                livrarias e marketplaces do mundo - e
-                gratuitamente.
-            </p>
+            <h3>Conheça a maior rede de distribuição <br> de livros do mundo!</h3>
+            <p style="padding: 1% 0; font-weight: 500;">Ao publicar no Clube de Autores, seu livro pode ser revendido nas maiores livrarias e marketplaces do mundo - e gratuitamente.</p>
             <h4 style="padding: 0;">Confira no mapa nossos principais parceiros e locais de distribuição.</h4>
         </section>
         <section class="sectionterc" >
@@ -1106,6 +1294,21 @@
 
             </div>
         </section>
+        <section class="sectionnew">
+            <h4 style="padding: 0;">Clique no pais para ver os canais de vendas locais</h4>
+            <div class="container">
+                <div class="toggle-list" onclick="toggleList('brasil')" id="brasil"><h4>Brasil</h4>
+                    <ul class="list" id="brasil-list">
+                        <li class="list-item"><p>Amazon Brazil</p><p>*ISBN exigido | *Livros com orelha serão adaptados para formato sem orelha</p></li>
+                      </ul>
+                </div>
+                <div class="toggle-list" onclick="toggleList('china')" id="china"><h4>china</h4>
+                    <ul class="list" id="china-list">
+                        <li class="list-item"><p>Amazon Brazil</p><p>*ISBN exigido | *Livros com orelha serão adaptados para formato sem orelha</p></li>
+                      </ul>
+                </div>
+              </div>
+        </section>
         <section class="sectionqua">
             <div class="divqua" style="padding: 10px;">
                 <h3 style="color: #FFFFFF ; padding: 0;">Como funciona a distribuição<br />
@@ -1113,331 +1316,119 @@
             </div>
         </section>
         <section class="sectionqui">
-            <p style="font-style: italic;width: 56%;margin-left: 22%; font-weight: 500;">Importante: A venda do seu livro nas livrarias e
-                lojas parceiras está condicionada à satisfação dos requisitos técnicos
-                exigidos por cada uma das parceiras. Algumas livrarias ou lojas exigem que a obra possua ISBN, outras
-                que o ebook esteja
-                no formato epub. Todos os livros distribuídos por terceiros poderão ter até 20% do seu conteúdo aberto
-                para a
-                pré-visualização dos usuários.</p>
-            <div class="funcionamento">
-                <div class="comofunciona" id="start">
-                    <div class="imgcomo"><img src="./img/comofunciona/icon1.svg" /></div>
-                    <div class="infos">
-                        <h5>1.</h5>
-                        <div class="textcomo">Publicou seu livro no Clube? Se você autorizar, em até 30 dias ele será
-                            distribuído em livrarias e
-                            marketplaces de todo
-                            o mundo!
+            <p style="font-style: italic;width: 56%;margin-left: 22%; font-weight: 600 !important;">Importante: A venda do seu livro nas livrarias e lojas parceiras está condicionada à satisfação dos requisitos técnicos exigidos por cada uma das parceiras. Algumas livrarias ou lojas exigem que a obra possua ISBN, outras que o ebook esteja no formato epub. Todos os livros distribuídos por terceiros poderão ter até 20% do seu conteúdo aberto para a pré-visualização dos usuários.</p>
+                <div class="funciona">
+                    <div class="slideinfos" id="start">
+                        <img class="slideimg" src="./img/comofunciona/icon1.svg" />
+                        <div class="stylebottom"></div>
+                        <div class="containerslide">
+                            <div class="slideyear">
+                                1.
+                                <h3>Publicou seu livro no Clube?
+                                    <p class="slidetext"><b>Se você autorizar</b>, em até 30 dias ele será distribuído em livrarias e marketplaces de todo o mundo!</p>
+                                </h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="comofunciona" >
-                    <div class="imgcomo"><img src="./img/comofunciona/icon2.svg" /></div>
-                    <div class="infos-rigth">
-                        <h5>2.</h5>
-                        <div class="textcomo">Você continua podendo mudar aspectos do seu livro a
-                            qualquer momento. No entanto, essas mudanças levarão até 30 dias
-                            para se refletirem nos canais de distribuição.
+                    
+                    <div class="slideinfos top">
+                        <div class="containerslide">
+                            <div class="slideyear">
+                                2.
+                                <h3>Mudanças após publicado
+                                    <p class="slidetext">Você continua podendo mudar aspectos do seu livro a qualquer momento. No entanto, essas mudanças levarão até 30 dias para se refletirem nos canais de distribuição.</p>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="styletop"></div>
+                        <img class="slideimg" src="./img/comofunciona/icon2.svg" />
+                    </div>
+                    
+                    <div class="slideinfos">
+                        <img class="slideimg" src="./img/comofunciona/icon3.svg" />
+                        <div class="stylebottom"></div>
+                        <div class="containerslide">
+                            <div class="slideyear">
+                                3.
+                                <h3>Livros adquiridos
+                                    <p class="slidetext">Livros já adquiridos por consumidores em formatos de áudio, assinatura ou empréstimo, continuarão com eles em cumprimento das regras estabelecidas entre as lojas conveniadas e os clientes finais.</p>
+                                </h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="comofunciona" >
-                    <div class="imgcomo"><img src="./img/comofunciona/icon7.svg" /></div>
-                    <div class="infos">
-                        <h5>3.</h5>
-                        <div class="textcomo">Livros já adquiridos por consumidores em formatos de áudio, assinatura ou
-                            empréstimo, continuarão com eles em
-                            cumprimento das regras estabelecidas entre as lojas conveniadas e os clientes finais.
+                    
+                    <div class="slideinfos top">
+                        <div class="containerslide">
+                            <div class="slideyear">
+                                4.
+                                <h3>Direitos autorais
+                                    <p class="slidetext">Se seu livro (impresso ou ebook) for comprado no site do Clube de Autores no qual tiver publicado, você receberá exatamente o que estipulou de direitos autorais no processo da publicação.</p>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="styletop"></div>
+                        <img class="slideimg" src="./img/comofunciona/icon4.svg" />
+                    </div>
+                    
+                    <div class="slideinfos">
+                        <img class="slideimg" src="./img/comofunciona/icon5.svg" />
+                        <div class="stylebottom"></div>
+                        <div class="containerslide">
+                            <div class="slideyear">
+                                5.
+                                <h3>20% do preço
+                                    <p class="slidetext">Se seu livro (impresso ou ebook) for comprado em qualquer livraria, maketplace ou em sites internacionais do Clube de Autores, você receberá 20% do preço a título de direitos autorais.</p>
+                                </h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="comofunciona" >
-                    <div class="imgcomo"><img src="./img/comofunciona/icon4.svg" /></div>
-                    <div class="infos-rigth">
-                        <h5>4.</h5>
-                        <div class="textcomo">Se seu livro (impresso ou ebook) for comprado no site do
-                            Clube de Autores no qual tiver publicado, você receberá
-                            exatamente o que estipulou de royalties no processo da publicação.
+                    
+                    <div class="slideinfos top" id="hidd1-sl">
+                        <div class="containerslide">
+                            <div class="slideyear">
+                                6.
+                                <h3>50% do valor
+                                    <p class="slidetext"id="hidd1">Se a comercialização da sua obra for feita em lojas conveniadas com o Clube que trabalhem no modelo de assinatura ou empréstimo, você receberá 50% do valor total repassado por elas ao Clube de Autores, sendo este valor calculado com base no percentual lido (no caso de livros eletrônicos) ou ouvido (no caso de audiolivros) de sua obra em relação a todas as obras consumidas por assinantes da loja em cada mês.</p>
+                                    <button class="vejacompl" id="hidd1-btn"onclick="vejacompleto('hidd1')"> Veja completo<p></p>
+                                    </button>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="styletop"></div>
+                        <img class="slideimg" src="./img/comofunciona/icon6.svg" />
+                    </div>
+                    
+                    <div class="slideinfos" id="hidd2-sl">
+                        <img class="slideimg" src="./img/comofunciona/icon7.svg" />
+                        <div class="stylebottom"></div>
+                        <div class="containerslide">
+                            <div class="slideyear">
+                                7.
+                                <h3>Preços ajustados
+                                    <p class="slidetext" id="hidd2">O preço do seu livro será sempre o mesmo por país independentemente do canal de venda. No caso de vendas em outros países, no entanto, os preços serão ajustados automaticamente de acordo com os custos de produção locais. Claro: você continuará recebendo 20% de direitos autorais em todas as vendas internacionais.</p>
+                                    
+                                    <button class="vejacompl" id="hidd2-btn"onclick="vejacompleto('hidd2')">Veja completo <p></p>
+                                    </button>
+                                </h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="comofunciona">
-                    <div class="imgcomo"><img src="./img/comofunciona/icon5.svg" /></div>
-                    <div class="infos">
-                        <h5>5.</h5>
-                        <div class="textcomo">Se seu livro (impresso ou ebook) for comprado em qualquer livraria, maketplace
-                            ou em sites internacionais do Clube de
-                            Autores, você receberá 20% do preço a título de royalties.
+                    
+                    <div class="slideinfos top">
+                        <div class="containerslide">
+                            <div class="slideyear">
+                                8.
+                                <h3>90 dias
+                                    <p class="slidetext">Todas as vendas feitas a partir de canais parceiros serão reportadas ao relatório do autor, no site do Clube, em até 90 dias a contar da data da venda no parceiro.</p>
+                                </h3>
+                            </div>
                         </div>
+                        <div class="styletop"></div>
+                        <img class="slideimg" src="./img/comofunciona/icon8.svg" />
                     </div>
-                </div>
-                <div class="comofunciona" >
-                    <div class="imgcomo"><img src="./img/comofunciona/icon6.svg" /></div>
-                    <div class="infos-rigth">
-                        <h5>6.</h5>
-                        <div class="textcomo">Se a comercialização da sua obra for feita em lojas
-                            conveniadas com o Clube que trabalhem no modelo de assinatura ou
-                            empréstimo, você receberá 50% do valor total repassado por elas ao Clube de Autores, sendo este
-                            valor calculado com base
-                            no percentual lido (no caso de livros eletrônicos) ou ouvido (no caso de audiolivros) de sua
-                            obra em relação a todas as
-                            obras consumidas por assinantes da loja em cada mês.
-                        </div>
-                    </div>
-                </div>
-                <div class="comofunciona">
-                    <div class="imgcomo"><img src="./img/comofunciona/icon3.svg" /></div>
-                    <div class="infos">
-                        <h5>7.</h5>
-                        <div class="textcomo">O preço do seu livro será sempre o mesmo por país independentemente do canal
-                            de venda. No caso de vendas em outros
-                            países, no entanto, os preços serão ajustados automaticamente de acordo com os custos de
-                            produção locais. Claro: você
-                            continuará recebendo 20% de royalties em todas as vendas internacionais.
-                        </div>
-                    </div>
-                </div>
-                <div class="comofunciona" id="end" >
-                    <div class="imgcomo"><img src="./img/comofunciona/icon8.svg" /></div>
-                    <div class="infos-rigth">
-                        <h5>8.</h5>
-                        <div class="textcomo">Todas as vendas feitas a partir de canais parceiros serão
-                            reportadas ao relatório do autor, no site do Clube, em até 90
-                            dias a contar da data da venda no parceiro.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="sectionsex">
-            <h3 style="margin-bottom: 2%;">Nossa história até aqui:</h3>
-            <div class="nossahistoria">
-                <div class="slideinfos" id="start">
-                    <img class="slideimg" src="./img/nossahistoria/slide2009.svg" />
-                    <div class="stylebottom"></div>
-                    <h6 class="slideyear">2009</h6>
-                    <p class="slidetext">O Clube é fundado pelos sócios Indio Brasileiro Guerra Neto, Ricardo Almeida e
-                        Anderson de
-                        Andrade.</p>
-                </div>
-                <div class="slideinfos top">
-                    <h6 class="slideyear">2012</h6>
-                    <p class="slidetext">Lançamento do www.profissionaisdolivro.com.br, primeiro marketplace de venda de
-                        serviços editoriais da América Latina.</p>
-                    <div class="styletop"></div>
-                    <img class="slideimg" src="./img/nossahistoria/slide2012.svg" />
-
-                </div>
-
-                <div class="slideinfos">
-                    <img class="slideimg" src="./img/nossahistoria/slide2013.svg" />
-                    <div class="stylebottom"></div>
-                    <h6 class="slideyear">2013</h6>
-                    <p class="slidetext">Primeira plataforma de autopublicação a receber um aporte. O investimento foi
-                        feito pelo Fundo SC, gerido pela empresa
-                        FirCapital BZPlan, e focado no investimento em empresas inovadoras.</p>
-                </div>
-                <div class="slideinfos top">
-                    <h6 class="slideyear">2014</h6>
-                    <p class="slidetext">Vencemos o Prêmio de Empreendimento mais Inovador do Mundo pela Feira do Livro
-                        de Londres.</p>
-                    <div class="styletop"></div>
-                    <img class="slideimg" src="./img/nossahistoria/slide2014.svg" />
-                </div>
-
-                <div class="slideinfos">
-                    <img class="slideimg" src="./img/nossahistoria/slide2015.svg" />
-                    <div class="stylebottom"></div>
-                    <h6 class="slideyear">2015</h6>
-                    <p class="slidetext">Livros do Clube de Autores são oficialmente selecionados para o acervo da
-                        Biblioteca do Congresso Americano.</p>
-                </div>
-                <div class="slideinfos top">
-                    <h6 class="slideyear">2016</h6>
-                    <p class="slidetext">Acordo com SESI e diversas universidades brasileiras para publicação e
-                        distribuição de livros no meio acadêmico.</p>
-                    <div class="styletop"></div>
-                    <img class="slideimg" src="./img/nossahistoria/slide2016.svg" />
-
-                </div>
-
-                <div class="slideinfos">
-                    <img class="slideimg" src="./img/nossahistoria/slide2018.svg" />
-                    <div class="stylebottom"></div>
-                    <h6 class="slideyear">2018</h6>
-                    <p class="slidetext">Acordo pioneiro de distribuição para livros autopublicados feito com a Estante
-                        Virtual, garantindo mais visibilidade
-                        para todos os autores.</p>
-                </div>
-                <div class="slideinfos top">
-                    <h6 class="slideyear">2019</h6>
-                    <p class="slidetext">Acordos de distribuição com Amazon, Livraria Cultura, Mercado Livre, Submarino
-                        e Americanas, transformando o Clube de
-                        Autores na plataforma de autopublicação com mais distribuição em todo o mundo.</p>
-                    <div class="styletop"></div>
-                    <img class="slideimg" src="./img/nossahistoria/slide2019.svg" />
-
-                </div>
-
-                <div class="slideinfos">
-                    <img class="slideimg" src="./img/nossahistoria/slide2020.svg" />
-                    <div class="stylebottom"></div>
-                    <h6 class="slideyear">2020</h6>
-                    <p class="slidetext">Acordo internacional viabilizando a venda e distribuição de livros do Clube de
-                        Autores em todo o mundo!</p>
-                </div>
-                <div class="slideinfos top">
-                    <h6 class="slideyear">2021</h6>
-                    <p class="slidetext">Lançamento do novo studio de design de capas integrado ao sistema de
-                        publicação; lançamento do novo Profissionais do
-                        Livro, prestando serviços editoriais completos para o autor; implantação de sistema de
-                        Compliance Editorial.</p>
-                    <div class="styletop"></div>
-                    <img class="slideimg" src="./img/nossahistoria/slide2021.svg" />
-
-                </div>
-
-                <div class="slideinfos">
-                    <img class="slideimg" src="./img/nossahistoria/slide2022.svg" />
-                    <div class="stylebottom"></div>
-                    <h6 class="slideyear">2022</h6>
-                    <p class="slidetext">Integração com sistema de ISBN da Câmara Brasileira do Livro, permitindo que
-                        livros já sejam publicados com o código;
-                        integração com novos modelos e lojas, ampliando a estrutura de distribuição; início do processo
-                        de internacionalização
-                        permitindo vendas por todo o mundo!</p>
-                </div>
-                <div class="slideinfos top" id="end">
-                    <h6 class="slideyear">2023</h6>
-                    <p class="slidetext">Inauguração do Clube de Autores em Portugal, abrindo caminho para publicações e
-                        vendas em um novo continente</p>
-                    <div class="styletop"></div>
-                    <img class="slideimg" src="./img/nossahistoria/slide2023.svg" />
-
-                </div>
-            </div>
-            <div class="nossahistoriamobile">
-                <div class="slideinfos" id="start">
-                    <img class="slideimg" src="./img/nossahistoria/slide2009.svg" />
-                    <div class="stylebottom"></div>
-                    <h6 class="slideyear">2009</h6>
-                    <p class="slidetext">O Clube é fundado pelos sócios Indio Brasileiro Guerra Neto, Ricardo Almeida e
-                        Anderson de
-                        Andrade.</p>
-                </div>
-                <div class="slideinfos bottom">
-                    <img class="slideimg" src="./img/nossahistoria/slide2012.svg" />
-                    <div class="stylebottom rosa"></div>
-                    <h6 class="slideyear">2012</h6>
-                    <p class="slidetext">Lançamento do www.profissionaisdolivro.com.br, primeiro marketplace de venda de
-                        serviços
-                        editoriais da América Latina.</p>
-
-                </div>
-                <div class="slideinfos">
-                    <img class="slideimg" src="./img/nossahistoria/slide2013.svg" />
-                    <div class="stylebottom"></div>
-                    <h6 class="slideyear">2013</h6>
-                    <p class="slidetext">Primeira plataforma de autopublicação a receber um aporte. O investimento foi
-                        feito pelo
-                        Fundo SC, gerido pela empresa
-                        FirCapital BZPlan, e focado no investimento em empresas inovadoras.</p>
-                </div>
-                <div class="slideinfos bottom">
-
-                    <img class="slideimg" src="./img/nossahistoria/slide2014.svg" />
-                    <div class="stylebottom rosa"></div>
-                    <h6 class="slideyear">2014</h6>
-                    <p class="slidetext">Vencemos o Prêmio de Empreendimento mais Inovador do Mundo pela Feira do Livro
-                        de Londres.
-                    </p>
-
-                </div>
-                <div class="slideinfos">
-                    <img class="slideimg" src="./img/nossahistoria/slide2015.svg" />
-                    <div class="stylebottom"></div>
-                    <h6 class="slideyear">2015</h6>
-                    <p class="slidetext">Livros do Clube de Autores são oficialmente selecionados para o acervo da
-                        Biblioteca do
-                        Congresso Americano.</p>
-                </div>
-                <div class="slideinfos bottom">
-
-                    <img class="slideimg" src="./img/nossahistoria/slide2016.svg" />
-                    <div class="stylebottom rosa"></div>
-                    <h6 class="slideyear">2016</h6>
-                    <p class="slidetext">Acordo com SESI e diversas universidades brasileiras para publicação e
-                        distribuição de
-                        livros no meio acadêmico.</p>
-
-
-                </div>
-                <div class="slideinfos">
-                    <img class="slideimg" src="./img/nossahistoria/slide2018.svg" />
-                    <div class="stylebottom"></div>
-                    <h6 class="slideyear">2018</h6>
-                    <p class="slidetext">Acordo pioneiro de distribuição para livros autopublicados feito com a Estante
-                        Virtual,
-                        garantindo mais visibilidade
-                        para todos os autores.</p>
-                </div>
-                <div class="slideinfos bottom">
-                    <img class="slideimg" src="./img/nossahistoria/slide2019.svg" />
-                    <div class="stylebottom rosa"></div>
-                    <h6 class="slideyear">2019</h6>
-                    <p class="slidetext">Acordos de distribuição com Amazon, Livraria Cultura, Mercado Livre, Submarino
-                        e
-                        Americanas, transformando o Clube de
-                        Autores na plataforma de autopublicação com mais distribuição em todo o mundo.</p>
-
-
-                </div>
-                <div class="slideinfos">
-                    <img class="slideimg" src="./img/nossahistoria/slide2020.svg" />
-                    <div class="stylebottom"></div>
-                    <h6 class="slideyear">2020</h6>
-                    <p class="slidetext">Acordo internacional viabilizando a venda e distribuição de livros do Clube de
-                        Autores em
-                        todo o mundo!</p>
-                </div>
-                <div class="slideinfos bottom">
-                    <img class="slideimg" src="./img/nossahistoria/slide2021.svg" />
-                    <div class="stylebottom rosa"></div>
-                    <h6 class="slideyear">2021</h6>
-                    <p class="slidetext">Lançamento do novo studio de design de capas integrado ao sistema de
-                        publicação; lançamento
-                        do novo Profissionais do
-                        Livro, prestando serviços editoriais completos para o autor; implantação de sistema de
-                        Compliance Editorial.
-                    </p>
-
-
-                </div>
-                <div class="slideinfos">
-                    <img class="slideimg" src="./img/nossahistoria/slide2022.svg" />
-                    <div class="stylebottom"></div>
-                    <h6 class="slideyear">2022</h6>
-                    <p class="slidetext">Integração com sistema de ISBN da Câmara Brasileira do Livro, permitindo que
-                        livros já
-                        sejam publicados com o código;
-                        integração com novos modelos e lojas, ampliando a estrutura de distribuição; início do processo
-                        de
-                        internacionalização
-                        permitindo vendas por todo o mundo!</p>
-                </div>
-                <div class="slideinfos bottom" id="end">
-                    <img class="slideimg" src="./img/nossahistoria/slide2023.svg" />
-                    <div class="stylebottom rosa"></div>
-                    <h6 class="slideyear">2023</h6>
-                    <p class="slidetext">Inauguração do Clube de Autores em Portugal, abrindo caminho para publicações e
-                        vendas em um
-                        novo continente
-                    </p>
-
-
-                </div>
-            </div>
+                    
+                    
+                </div>    
         </section>
         <section class="sectionset">
             <div style="width: 50%;display: flex;
@@ -1607,91 +1598,83 @@
     </main>
     <footer class="footer">
         <div class="container">
-          <div class="row">
-            <div class="col-xl-9 col-md-7 col-12 order-md-1 order-2">
-              <div class="footer-column d-md-block">
-                <div class="footer-column-title">Sobre o Clube</div>
-                <div class="footer-column-links">
-                  <a href="https://clubedeautores.com.br/duvidas-frequentes" title="Dúvidas">Dúvidas</a>
-                  <a href="https://clubedeautores.com.br/authors" title="Autores">Autores</a>
-                  <a href="https://clubedeautores.com.br/simulador-de-publicacao" title="Publique seu livro">Publique seu livro</a>
-                  <a href="https://clubedeautores.com.br/webpage/direitos-autorais" title="Contrato com o Autor">Contrato com o Autor</a>
-                  <a href="https://clubedeautores.com.br/quem-somos" title="Quem somos">Quem somos</a>
-                  <a href="https://clubedeautores.com.br/fatos-e-dados" title="Fatos e Dados sobre o Clube de Autores">Fatos e Dados</a>
-                  <a href="https://clubedeautores.com.br/webpage/termos-de-uso" title="Termos de uso">Termos de uso</a>
-                  <a href="https://blog.clubedeautores.com.br" title="Blog" rel="noopener">Blog</a>
-                  <a href="https://clubedeautores.com.br/webpage/politica-de-privacidade" title="Política de privacidade">Política de privacidade</a>
-                  <a href="https://clubedeautores.com.br/compliance" title="Compliance Editorial">Compliance Editorial</a>
-                  <a href="https://profissionaisdolivro.com.br" title="Serviços profissionais" rel="noopener">Serviços profissionais</a>
-                  <a href="https://clubedeautores.com.br/webpage/universidade-do-autor" title="Universidade do autor">Universidade do autor</a>
-                    <a href="https://clubedeautores.com.br/webpage/compras-em-quantidade" title="Compras em quantidade">Compras em quantidade</a>
-                  <a href="https://clubedeautores.com.br/distribuicao" title="Canais de distribuição">Canais de distribuição</a>
-                </div>
-              </div>
-              <div class="footer-column">
-                <div class="footer-column-title">Formas de Pagamento</div>
-                <div class="footer-column-brands">
-                  <img alt="Boleto" loading="lazy" src="https://clubedeautores.com.br/assets/newstyle/boleto-5dc841ffe41d6702d4e09c7e614bb7d9e896c318e7c838072274dd6bb3048a1a.svg" width="50" height="30">
-                  <img alt="Itau" loading="lazy" src="https://clubedeautores.com.br/assets/newstyle/itau-b93dfd1f690ad0e1af4ad7d5683819e57f46360966c1694c9e60ef07f9f6b822.svg" width="50" height="30">
-                  <img alt="Visa" loading="lazy" src="https://clubedeautores.com.br/assets/newstyle/visa-82bd9c5fe54e51e40f73701203a117f0420bcec82d8544bec00419cc05894a3e.svg" width="50" height="30">
-                  <img alt="Mastercard" loading="lazy" src="https://clubedeautores.com.br/assets/newstyle/mastercard-31abb548ffba8573228ca13a5f8160e3c24dd10cb50cee5e0b703621f3bc4f94.svg" width="50" height="30">
-                  <img alt="Amex" loading="lazy" src="https://clubedeautores.com.br/assets/newstyle/amex-a24c4d5ef690236bb7d124c4cb6647379877399b6a76a136edc23baf2ba49ca8.svg" width="50" height="30">
-                  <img alt="Diners" loading="lazy" src="https://clubedeautores.com.br/assets/newstyle/diners-2918fe0b5d42ce092ad834a5e342cff86a101e66e9384af0dcff116ba7749e01.svg" width="50" height="30">
-                  <img alt="Hipercard" loading="lazy" src="https://clubedeautores.com.br/assets/newstyle/hipercard-6d80f8e20e0ac1e42cf47843074c1b9082d5bf4b7c90d7bee8b22083c5291794.svg" width="50" height="30">
-                </div>
-                <div class="footer-column">
-                  <div class="footer-column-title">Segurança</div>
-                  <div class="footer-column-brands">
-                    <img alt="Norton Web Safe" loading="lazy" src="https://clubedeautores.com.br/assets/newstyle/norton-d8a9c1f3d6d8abe6de91a419250eaad4b2a0d955b2f4de617fef2243b4a0e3d1.svg" width="83" height="24">
-                  </div>
-                </div>
-              </div>
-              <div class="footer-column media-social">
-                <div class="footer-column-title">Mídias Sociais</div>
-                <div class="footer-column-socials">
-                  <a href="https://twitter.com/ClubedeAutores" title="Twitter" class="twitter" rel="noopener"></a>
-                  <a href="https://facebook.com/cdautores" title="Facebook" class="facebook" rel="noopener"></a>
-                  <a href="https://www.instagram.com/clubedeautores" title="Instagram" class="instagram" rel="noopener"></a>
-                  <a href="https://www.tiktok.com/@clubedeautores" title="Tiktok" class="tiktok" rel="noopener"></a>
-                  <a href="https://br.linkedin.com/company/clube-de-autores" title="Linkedin" class="linkedin" rel="noopener"></a>
-                  <a href="https://www.youtube.com/@ClubedeAutores1" title="Youtube" class="youtube" rel="noopener"></a>
-                  <a href="https://blog.clubedeautores.com.br/" title="Blog" class="clube-blog" rel="noopener"></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-5 col-12 order-md-2 order-1">
-              <div class="footer-newsletter">
-                <div class="footer-newsletter-title">Assine a nossa newsletter</div>
-                <style>
-                   div.message { display: none; margin-bottom: 15px; }
-                </style>
-                <div class="message success">
-                  E-mail cadastrado com sucesso! Aguarde nossas novidades.
-                </div>
-                <div class="message warning">
-                  Seu e-mail já está cadastrado, obrigado pelo interesse!
-                </div>
-                <div class="message error">
-                  Ops! Ocorreu um erro, tente novamente.
-                </div>
-    
-                <form class="new_subscription" id="new_subscription" action="https://clubedeautores.com.br/subscriptions" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="134scCouA4ztVYmlfMlRs6hAakQgo5a0fFtq6hoqu98FiL_zP76v-bz_6Sbgv_qG90HN2rOUVVSir_eNxKldbQ">
-                  <input value="1" type="hidden" name="subscription[region_id]" id="subscription_region_id">
-                  <label>Nome*</label>
-                  <input placeholder="Seu nome" type="text" name="subscription[name]" id="subscription_name">
-                  <label>E-mail*</label>
-                  <input placeholder="Seu e-mail" type="email" name="subscription[email]" id="subscription_email">
-                  <button type="submit">Assinar</button>
-    </form>          </div>
-            </div>
-          </div>
-          <div style="font-size: 0.8em" class="baseboard-address">
-            Clube de Autores Publicações S/A - CNPJ: 16.779.786/0001-27 <br>
-    Av. Juscelino Kubitscheck, 350 - 2 andar - Centro, Joinville - SC, 89201-100
-    
-          </div>
+        <div class="row">
+        <div class="col-xl-9 col-md-7 col-12 order-md-1 order-2">
+        <div class="footer-column d-md-block">
+        <div class="footer-column-title">Sobre o Clube</div>
+        <div class="footer-column-links">
+        <a href="/duvidas-frequentes" title="Dúvidas">Dúvidas</a>
+        <a href="/autores" title="Autores">Autores</a>
+        <a href="https://blog.clubedeautores.com.br" title="Blog" rel="noopener">Blog</a>
+        <a href="/quem-somos" title="Quem somos">Quem somos</a>
+        <a href="/fatos-e-dados" title="Fatos e Dados sobre o Clube de Autores">Fatos e Dados</a>
+        <a href="/termos-de-uso" title="Termos de uso">Termos de uso</a>
+        <a href="/direitos-autorais" title="Contrato com o Autor">Contrato com o Autor</a>
+        <a href="/politica-de-privacidade" title="Política de privacidade">Política de privacidade</a>
+        <a href="/compliance" title="Compliance Editorial">Compliance Editorial</a>
+        <a href="https://profissionaisdolivro.com.br" title="Serviços profissionais" rel="noopener">Serviços profissionais</a>
+        <a href="/universidade-do-autor" title="Universidade do autor">Universidade do autor</a>
+        <a href="/compras-em-quantidade" title="Compras em quantidade">Compras em quantidade</a>
+        <a href="/distribuicao" title="Canais de distribuição">Canais de distribuição</a>
+        <a href="/simulador-de-publicacao" title="Simulador de publicação de livros">Simulador de publicação<br> de livros</a>
         </div>
-      </footer>
+        </div>
+        <div class="footer-column">
+        <div class="footer-column-title">Formas de Pagamento</div>
+        <div class="footer-column-brands brands-exterior">
+        <img src="/images/footer/boleto.svg" alt="Boleto" width="50" height="30" loading="lazy">
+        <img src="/images/footer/itau.svg" alt="Itau" width="50" height="30" loading="lazy">
+        <img src="/images/footer/visa.svg" alt="Visa" width="50" height="30" loading="lazy">
+        <img src="/images/footer/mastercard.svg" alt="Mastercard" width="50" height="30" loading="lazy">
+        <img src="/images/footer/amex.svg" alt="Amex" width="50" height="30" loading="lazy">
+        <img src="/images/footer/diners.svg" alt="Diners" width="50" height="30" loading="lazy">
+        <img src="/images/footer/hipercard.svg" alt="Hipercard" width="50" height="30" loading="lazy">
+        </div>
+        <div class="footer-column">
+        <div class="footer-column-title">Segurança</div>
+        <div class="footer-column-brands">
+        <img alt="Norton Web Safe" loading="lazy" src="/assets/newstyle/norton-d8a9c1f3d6d8abe6de91a419250eaad4b2a0d955b2f4de617fef2243b4a0e3d1.svg" width="83" height="24">
+        </div>
+        </div>
+        </div>
+        <div class="footer-column media-social">
+        <div class="footer-column-title">Mídias Sociais</div>
+        <div class="footer-column-socials">
+        <a href="https://twitter.com/ClubedeAutores" title="Twitter" class="twitter" rel="noopener"></a>
+        <a href="https://facebook.com/cdautores" title="Facebook" class="facebook" rel="noopener"></a>
+        <a href="https://www.instagram.com/clubedeautores" title="Instagram" class="instagram" rel="noopener"></a>
+        <a href="https://www.tiktok.com/@clubedeautores" title="Tiktok" class="tiktok" rel="noopener"></a>
+        <a href="https://br.linkedin.com/company/clube-de-autores" title="Linkedin" class="linkedin" rel="noopener"></a>
+        <a href="https://www.youtube.com/@ClubedeAutores1" title="Youtube" class="youtube" rel="noopener"></a>
+        <a href="https://blog.clubedeautores.com.br/" title="Blog" class="clube-blog" rel="noopener"></a>
+        </div>
+        </div>
+        </div>
+        <div class="col-xl-3 col-md-5 col-12 order-md-2 order-1">
+        <div class="footer-newsletter">
+        <div class="footer-newsletter-title">Assine a nossa newsletter</div>
+        <style>
+                       div.message { display: none; margin-bottom: 15px; }
+                    </style>
+        <div class="message success">E-mail cadastrado com sucesso! Aguarde nossas novidades.</div>
+        <div class="message warning">Seu e-mail já está cadastrado, obrigado pelo interesse!</div>
+        <div class="message error">Ops! Ocorreu um erro, tente novamente.</div>
+        <form class="new_subscription" id="new_subscription" action="/subscriptions" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="sWqnWDOOFxOXaStLzuiiFUvMaMpzPMzSUpx6caMPi4eWjr_MERQ8SsytwC5DSEcdFyrryOynuwF5_E5lr9SHIA" content="bS6N6LWwxw-4VcuN2F75itlBFC92XsakW7_Ng70jTamg3kAHNN7ja9Q_kHmnqjje32ckgphLqiZR_BUzGH0GPQ">
+        <input value="1" type="hidden" name="subscription[region_id]" id="subscription_region_id">
+        <label for="subscription_name">Nome*</label>
+        <input placeholder="Seu nome" type="text" name="subscription[name]" id="subscription_name">
+        <label for="subscription_email">E-mail*</label>
+        <input placeholder="Seu e-mail" type="email" name="subscription[email]" id="subscription_email">
+        <button type="submit">Assinar</button>
+        </form> </div>
+        </div>
+        </div>
+        <div style="font-size: 0.8em" class="baseboard-address">
+        Clube de Autores Publicações S/A - CNPJ: 16.779.786/0001-27 <br>
+        Av. Juscelino Kubitscheck, 350 - 2 andar - Centro, Joinville - SC, 89201-100
+        </div>
+        </div>
+        </footer>
     <script>
         let idold = 0
         function duvida(id) {
@@ -1721,73 +1704,6 @@
                 document.getElementById(`text${id}`).classList.add("active")
             }
         }
-        $('.nossahistoriamobile').slick({
-            dots: false,
-            infinite: false,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            initialSlide: 12
-
-        });
-        
-        $('.nossahistoria').slick({
-            initialSlide: 7,
-            dots: false,
-            infinite: false,
-            speed: 500,
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-
-            ]
-        });
-
-        $('.funcionamento').slick({
-            initialSlide: 0,
-            dots: true,
-            infinite: false,
-            speed: 500,
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        });
     </script>
 
 
@@ -1808,6 +1724,42 @@
             document.getElementById(`mapa-${value}`).style.display = 'block'
         }
     </script>
+    <script>
+        function toggleList(list_name) {
+            ids = ["brasil", "china"];
+
+            for (var i = 0; i < ids.length; i++) {
+            var lists = document.getElementById(ids[i] + '-list');
+            var idx = document.getElementById(list_name);
+            lists.style.display = "none";
+            idx.classList.remove("active");
+            }
+
+          var id = document.getElementById(list_name);
+          var list = document.getElementById(list_name+'-list');
+          if (list.style.display === "none" || list.style.display === "") {
+            list.style.display = "block";
+            id.classList.add("active")
+          } else {
+            list.style.display = "none";
+            id.classList.remove("active")
+          }
+        }
+        function vejacompleto(hidd){
+            var id = document.getElementById(hidd);
+            var button = document.getElementById(hidd+"-btn");
+            var slide = document.getElementById(hidd+"-sl");
+            id.style.height="100%"
+            button.style.display = "none";
+            slide.style.marginBottom="140px"
+            
+    console.log("ID:", id);
+    console.log("Button:", button);
+    console.log("Slide:", slide);
+
+        }
+      </script>
+      
 </body>
 
 </html>
