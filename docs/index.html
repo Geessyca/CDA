@@ -1726,18 +1726,10 @@ cursor: pointer;
     </script>
     <script>
         function toggleList(list_name) {
-            ids = ["brasil", "china"];
-
-            for (var i = 0; i < ids.length; i++) {
-            var lists = document.getElementById(ids[i] + '-list');
-            var idx = document.getElementById(list_name);
-            lists.style.display = "none";
-            idx.classList.remove("active");
-            }
-
           var id = document.getElementById(list_name);
           var list = document.getElementById(list_name+'-list');
-          if (list.style.display === "none" || list.style.display === "") {
+          console.log(list.style.display)
+          if (list.style.display == "none" || list.style.display == "") {
             list.style.display = "block";
             id.classList.add("active")
           } else {
