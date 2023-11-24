@@ -942,8 +942,8 @@
         margin: 5vh 0 10vh;
         flex-direction: column;
     }
-
-    .sectionnew h4 {
+    
+    .sectionnew h4, .sectionpar h4{
         font-size: 25px;
         font-weight: 500 !important;
         color: #724A88;
@@ -959,9 +959,8 @@
         max-height: 70vh;
         overflow-y: auto;
     }
-
     @media screen and (max-width: 768px) {
-        .sectionnew h4 {
+        .sectionnew h4 , .sectionpar h4{
             font-size: 20px;
         }
 
@@ -1291,6 +1290,9 @@
     .sectionpar{
         margin-top: -100px;
         margin-bottom: 100px;
+    }
+    .sectionpar h4{
+        margin-bottom: 30px !important;
     }
     .slick-next:before{
         content: "";
@@ -2420,6 +2422,7 @@
             </div>
         </section>
         <section class="sectionpar">
+            <h4 style="padding: 0;">Distribuidores de e-book</h4>
             <div class="slider">
                 <img src="./img/logos/Skeelo.png"/>
                 <img src="./img/logos/Scribd.png"/>
