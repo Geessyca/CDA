@@ -1296,13 +1296,22 @@
         content: "";
     }
     .slider img{
-       padding: 10px;
+       padding: 0 10px;
     }
     .slider .slick-slide{
-        margin-top: 00px;
-    }
-    @media screen and (max-width:600px) {.sectionpar{
         margin-top: 0;
+    }
+    .slider button{
+        margin-top: 50px;
+    }
+    .slider .slick-slide{
+        margin-top: -20px;
+    }
+    @media screen and (max-width:800px) {.sectionpar{
+        margin-top: -50px;
+        margin-bottom: 10px;
+    }.slider .slick-slide{
+        margin-top: -10px;
     }}
 </style>
 
@@ -2412,22 +2421,15 @@
         </section>
         <section class="sectionpar">
             <div class="slider">
-                <img src="./img/logo.png"/>
-                <img src="./img/logo2.png"/>
-                <img src="./img/logo.png"/>
-                <img src="./img/logo2.png"/>
-                <img src="./img/logo.png"/>
-                <img src="./img/logo2.png"/>
-                <img src="./img/logo.png"/>
-                <img src="./img/logo2.png"/>
-                <img src="./img/logo.png"/>
-                <img src="./img/logo2.png"/>
-                <img src="./img/logo.png"/>
-                <img src="./img/logo2.png"/>
-                <img src="./img/logo.png"/>
-                <img src="./img/logo2.png"/>
-                <img src="./img/logo.png"/>
-                <img src="./img/logo2.png"/>
+                <img src="./img/logos/Skeelo.png"/>
+                <img src="./img/logos/Scribd.png"/>
+                <img src="./img/logos/Overdrive.png"/>
+                <img src="./img/logos/Google.png"/>
+                <img src="./img/logos/Clube.png"/>
+                <img src="./img/logos/Bookmate.png"/>
+                <img src="./img/logos/Barnes.png"/>
+                <img src="./img/logos/Asset 22@3x.png"/>
+                <img src="./img/logos/Amazon.png"/>
             </div>
         </section>
         <section class="sectionqua">
@@ -3007,7 +3009,7 @@
             dots: false,
             infinite: false,
             speed: 500,
-            slidesToShow: 8,
+            slidesToShow: 5,
             slidesToScroll: 3,            
             responsive: [
                 {
@@ -3018,9 +3020,9 @@
                     }
                 },
                 {
-                    breakpoint: 600,
+                    breakpoint: 800,
                     settings: {
-                        slidesToShow: 1,
+                        slidesToShow: 3,
                         slidesToScroll: 1
                     }
                 },
