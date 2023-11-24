@@ -1295,23 +1295,23 @@
     .slick-next:before{
         content: "";
     }
-    .slider img{
-       padding: 0 10px;
-    }
     .slider .slick-slide{
         margin-top: 0;
     }
     .slider button{
         margin-top: 50px;
     }
-    .slider .slick-slide{
-        margin-top: -20px;
+    .slider img{
+    box-shadow: 0 0 10px rgb(0 0 0 / 11%);
+    border-radius: 50%;
+    margin: 20px;
     }
     @media screen and (max-width:800px) {.sectionpar{
         margin-top: -50px;
         margin-bottom: 10px;
-    }.slider .slick-slide{
-        margin-top: -10px;
+    }
+    .slider button{
+        margin-top: 10px;
     }}
 </style>
 
@@ -3029,7 +3029,7 @@
                 {
                     breakpoint: 480,
                     settings: {
-                        slidesToShow: 1,
+                        slidesToShow: 2,
                         slidesToScroll: 1
                     }
                 }
