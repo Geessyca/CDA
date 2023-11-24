@@ -956,6 +956,8 @@
         width: 80%;
         margin: 10vh auto;
         text-align: left;
+        max-height: 70vh;
+        overflow-y: auto;
     }
 
     @media screen and (max-width: 768px) {
@@ -1286,6 +1288,22 @@
     img.mobileslideimg {
         margin: auto;
     }
+    .sectionpar{
+        margin-top: -100px;
+        margin-bottom: 100px;
+    }
+    .slick-next:before{
+        content: "";
+    }
+    .slider img{
+       padding: 10px;
+    }
+    .slider .slick-slide{
+        margin-top: 00px;
+    }
+    @media screen and (max-width:600px) {.sectionpar{
+        margin-top: 0;
+    }}
 </style>
 
 <body>
@@ -2392,12 +2410,33 @@
                 </div>
             </div>
         </section>
+        <section class="sectionpar">
+            <div class="slider">
+                <img src="./img/logo.png"/>
+                <img src="./img/logo2.png"/>
+                <img src="./img/logo.png"/>
+                <img src="./img/logo2.png"/>
+                <img src="./img/logo.png"/>
+                <img src="./img/logo2.png"/>
+                <img src="./img/logo.png"/>
+                <img src="./img/logo2.png"/>
+                <img src="./img/logo.png"/>
+                <img src="./img/logo2.png"/>
+                <img src="./img/logo.png"/>
+                <img src="./img/logo2.png"/>
+                <img src="./img/logo.png"/>
+                <img src="./img/logo2.png"/>
+                <img src="./img/logo.png"/>
+                <img src="./img/logo2.png"/>
+            </div>
+        </section>
         <section class="sectionqua">
             <div class="divqua" style="padding: 10px;">
                 <h3 style="color: #FFFFFF ; padding: 0;">Como funciona a distribuição<br />
                     no Clube de Autores?</h3>
             </div>
         </section>
+      
         <section class="sectionqui">
             <p style="font-style: italic;width: 56%;margin-left: 22%; font-weight: 600 !important;">Importante: A venda
                 do seu livro nas livrarias e lojas parceiras está condicionada à satisfação dos requisitos técnicos
@@ -2963,6 +3002,39 @@
             document.getElementById("mapa-todos").style.display = "none"
             document.getElementById(`mapa-${value}`).style.display = 'block'
         }
+        $('.slider').slick({
+            initialSlide: 0,
+            dots: false,
+            infinite: false,
+            speed: 500,
+            slidesToShow: 8,
+            slidesToScroll: 3,            
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 1,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+
+            ]
+        });
+    
         $('.funcionamobile').slick({
             initialSlide: 0,
             dots: false,
@@ -2998,9 +3070,18 @@
     </script>
     <script>
         function toggleList(list_name) {
+            var ids=['Alemanha', 'Argentina', 'Australia', 'Brasil', 'Canada', 'China', 'Colombia', 'Ecuador', 'Espanha', 'Germany', 'India', 'Italia', 'Japan', 'Mexico', 'NovaZ', 'Peru', 'Polonia', 'Portugal', 'SharjahUAE', 'Singapura', 'SouthAfrica', 'SouthKorea', 'UK', 'USA', 'Uruguay']
+            var index = ids.indexOf(list_name);
+            if (index !== -1) {
+                ids.splice(index, 1);
+            }
+            for(var i=0;i<ids.length;i++){
+                var name =ids[i]
+                document.getElementById(name + '-list').style.display = "none";
+                document.getElementById(name).classList.remove("active")
+            }            
             var id = document.getElementById(list_name);
             var list = document.getElementById(list_name + '-list');
-            console.log(list.style.display)
             if (list.style.display == "none" || list.style.display == "") {
                 list.style.display = "block";
                 id.classList.add("active")
