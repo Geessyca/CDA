@@ -1614,6 +1614,22 @@
                                 *ISBN Exigido | *Livros com orelha serão adaptados para formato sem orelha
                             </p>
                         </li>
+                        <li class="list-item">
+                            <p>
+                                Amazon.de
+                            </p>
+                            <p>
+                                *ISBN Exigido | *Livros com orelha serão adaptados para formato sem orelha
+                            </p>
+                        </li>
+                        <li class="list-item">
+                            <p>
+                                Libri Wholesale and Distribution
+                            </p>
+                            <p>
+                                *ISBN Exigido | *Livros com orelha serão adaptados para formato sem orelha
+                            </p>
+                        </li>
                     </ul>
                 </div>
                 <div class="toggle-list" id="Argentina" onclick="toggleList('Argentina')">
@@ -1948,29 +1964,6 @@
                             </p>
                             <p>
                                 *ISBN Exigido
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="toggle-list" id="Germany" onclick="toggleList('Germany')">
-                    <h4>
-                        Germany
-                    </h4>
-                    <ul class="list" id="Germany-list">
-                        <li class="list-item">
-                            <p>
-                                Amazon.de
-                            </p>
-                            <p>
-                                *ISBN Exigido | *Livros com orelha serão adaptados para formato sem orelha
-                            </p>
-                        </li>
-                        <li class="list-item">
-                            <p>
-                                Libri Wholesale and Distribution
-                            </p>
-                            <p>
-                                *ISBN Exigido | *Livros com orelha serão adaptados para formato sem orelha
                             </p>
                         </li>
                     </ul>
@@ -3015,7 +3008,7 @@
         $('.slider').slick({
             initialSlide: 0,
             dots: false,
-            infinite: false,
+            infinite: true,
             speed: 500,
             slidesToShow: 5,
             slidesToScroll: 3,            
@@ -3080,7 +3073,7 @@
     </script>
     <script>
         function toggleList(list_name) {
-            var ids=['Alemanha', 'Argentina', 'Australia', 'Brasil', 'Canada', 'China', 'Colombia', 'Ecuador', 'Espanha', 'Germany', 'India', 'Italia', 'Japan', 'Mexico', 'NovaZ', 'Peru', 'Polonia', 'Portugal', 'SharjahUAE', 'Singapura', 'SouthAfrica', 'SouthKorea', 'UK', 'USA', 'Uruguay']
+            var ids=['Alemanha', 'Argentina', 'Australia', 'Brasil', 'Canada', 'China', 'Colombia', 'Ecuador', 'Espanha','India', 'Italia', 'Japan', 'Mexico', 'NovaZ', 'Peru', 'Polonia', 'Portugal', 'SharjahUAE', 'Singapura', 'SouthAfrica', 'SouthKorea', 'UK', 'USA', 'Uruguay']
             var index = ids.indexOf(list_name);
             if (index !== -1) {
                 ids.splice(index, 1);
